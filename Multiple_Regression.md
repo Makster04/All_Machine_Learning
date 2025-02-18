@@ -3,16 +3,16 @@
 ### **1. Multiple Linear Regression Model**  
 A multiple linear regression model is mathematically represented as:  
 
-\[
+$$\[
 Y = \beta_0 + \beta_1 X_1 + \beta_2 X_2 + \dots + \beta_n X_n + \epsilon
-\]
+\]$$
 
 where:  
-- \( Y \) = **Dependent variable (target)**: The outcome variable we are trying to predict.  
-- \( X_1, X_2, ..., X_n \) = **Independent variables (predictors)**: Features that influence \( Y \).  
-- \( \beta_0 \) = **Intercept**: The value of \( Y \) when all \( X \) variables are zero.  
-- \( \beta_1, \beta_2, ..., \beta_n \) = **Regression coefficients**: Represent how much \( Y \) changes for a one-unit increase in \( X \), holding other variables constant.  
-- \( \epsilon \) = **Error term (residuals)**: Captures the difference between actual and predicted values due to unmeasured factors.  
+- $$\( Y \)$$ = **Dependent variable (target)**: The outcome variable we are trying to predict.  
+- $$\( X_1, X_2, ..., X_n \)$$ = **Independent variables (predictors)**: Features that influence $$\( Y \)$$.  
+- $$\( \beta_0 \)$$ = **Intercept**: The value of $$\( Y \)$$ when all $$\( X \)$$ variables are zero.  
+- $$\( \beta_1, \beta_2, ..., \beta_n \)$$ = **Regression coefficients**: Represent how much $$\( Y \)$$ changes for a one-unit increase in $$\( X \)$$, holding other variables constant.  
+- $$\( \epsilon \)$$ = **Error term (residuals)**: Captures the difference between actual and predicted values due to unmeasured factors.  
 
 ---
 
@@ -73,25 +73,25 @@ X3             1.2046      0.099     12.165      0.002       0.805       1.604
 ### **3. Model Evaluation Metrics**  
 
 #### **Coefficient of Determination (\( R^2 \))**  
-\[
+$$\[
 R^2 = 1 - \frac{SS_{res}}{SS_{tot}}
-\]
-- \( R^2 \) = **Explained variance**: Measures the proportion of variance in \( Y \) explained by predictors.  
-- \( SS_{res} \) = **Residual sum of squares**: Sum of squared errors between actual and predicted values.  
-- \( SS_{tot} \) = **Total sum of squares**: Measures total variation in \( Y \).  
-- Higher \( R^2 \) means a better model fit.
+\]$$
+- $$\( R^2 \)$$ = **Explained variance**: Measures the proportion of variance in \( Y \) explained by predictors.  
+- $$\( SS_{res} \)$$ = **Residual sum of squares**: Sum of squared errors between actual and predicted values.  
+- $$\( SS_{tot} \)$$ = **Total sum of squares**: Measures total variation in \( Y \).  
+- Higher $$\( R^2 \)$$ means a better model fit.
 
 #### **Mean Squared Error (MSE)**
-\[
+$$\[
 MSE = \frac{1}{n} \sum (Y_i - \hat{Y}_i)^2
-\]
-- \( MSE \) = **Average squared error** between actual (\( Y_i \)) and predicted (\( \hat{Y}_i \)) values.  
+\]$$
+- $$\( MSE \)$$ = **Average squared error** between actual $$(\( Y_i \))$$ and predicted $$(\( \hat{Y}_i \))$$ values.  
 
 #### **Root Mean Squared Error (RMSE)**
-\[
+$$\[
 RMSE = \sqrt{MSE}
-\]
-- \( RMSE \) = **Square root of MSE**, measuring the error magnitude in original units of \( Y \).
+\]$$
+- $$\( RMSE \)$$ = **Square root of MSE**, measuring the error magnitude in original units of $$\( Y \)$$.
 
 #### **Implementation in Python**
 ```python
