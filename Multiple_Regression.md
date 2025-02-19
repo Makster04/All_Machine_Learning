@@ -137,28 +137,7 @@ We'll calculate the relationships with `Price` and visualize them. Here's how we
 
 We'll use a scatter plot to show the relationship between `SquareFootage` and `Price`.
 
-### 2. Discrete Numeric Predictor (`Bedrooms`)
-
-We'll use a scatter plot for this as well but interpret it in terms of distinct points for each bedroom count.
-
-### 3. String Categorical Predictor (`Location`)
-
-We'll use a box plot to show how `Price` varies across the different locations.
-
-### 4. Discrete Categorical Predictor (`Location_Urban`)
-
-We'll use a box plot as well to compare `Price` between `Urban` (coded as 1) and `Suburban` (coded as 0).
-
-Let me show you the implementation of each visualization.
-
-### Code:
 ```python
-import matplotlib.pyplot as plt
-import seaborn as sns
-
-# Set up the plotting environment
-sns.set(style="whitegrid")
-
 # 1. Continuous numeric predictor (SquareFootage vs Price)
 plt.figure(figsize=(10, 6))
 sns.scatterplot(x='SquareFootage', y='Price', data=df)
@@ -166,7 +145,13 @@ plt.title('Price vs SquareFootage')
 plt.xlabel('SquareFootage')
 plt.ylabel('Price')
 plt.show()
+```
 
+### 2. Discrete Numeric Predictor (`Bedrooms`)
+
+We'll use a scatter plot for this as well but interpret it in terms of distinct points for each bedroom count.
+
+```python
 # 2. Discrete numeric predictor (Bedrooms vs Price)
 plt.figure(figsize=(10, 6))
 sns.scatterplot(x='Bedrooms', y='Price', data=df)
@@ -174,7 +159,11 @@ plt.title('Price vs Bedrooms')
 plt.xlabel('Bedrooms')
 plt.ylabel('Price')
 plt.show()
+```
 
+### 3. String Categorical Predictor (`Location`)
+
+```python
 # 3. String categorical predictor (Location vs Price)
 plt.figure(figsize=(10, 6))
 sns.boxplot(x='Location', y='Price', data=df)
@@ -182,7 +171,13 @@ plt.title('Price Distribution by Location')
 plt.xlabel('Location')
 plt.ylabel('Price')
 plt.show()
+```
 
+We'll use a box plot to show how `Price` varies across the different locations.
+
+### 4. Discrete Categorical Predictor (`Location_Urban`)
+
+```python
 # 4. Discrete categorical predictor (Location_Urban vs Price)
 plt.figure(figsize=(10, 6))
 sns.boxplot(x='Location_Urban', y='Price', data=df_encoded)
@@ -192,13 +187,23 @@ plt.ylabel('Price')
 plt.show()
 ```
 
+We'll use a box plot as well to compare `Price` between `Urban` (coded as 1) and `Suburban` (coded as 0).
+
+### Code:
+```python
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Set up the plotting environment
+sns.set(style="whitegrid")
+```
+
 ### Output (Visualizations):
 This code will generate four plots:
 1. **Scatter plot** of `SquareFootage` vs `Price`.
 2. **Scatter plot** of `Bedrooms` vs `Price`.
 3. **Box plot** of `Location` vs `Price`.
 4. **Box plot** of `Location_Urban` vs `Price`.
-
 
 ---
 
