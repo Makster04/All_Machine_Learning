@@ -1,4 +1,4 @@
-Here is the rewritten content merging the previous explanations into one comprehensive overview:
+# Summary on Multiple Linear Regression:
 
 ---
 
@@ -37,11 +37,11 @@ Suppose you're predicting the price of a house using square footage, the number 
 
 The model equation might look like this:
 
-\[ \text{Price} = β₀ + β₁ \times \text{Square Footage} + β₂ \times \text{Bedrooms} + β₃ \times \text{Location} + ϵ \]
+$$\[ \text{Price} = β₀ + β₁ \times \text{Square Footage} + β₂ \times \text{Bedrooms} + β₃ \times \text{Location} + ϵ \]$$
 
 Where:
-- \( β₀ \) is the intercept.
-- \( β₁, β₂, β₃ \) are the coefficients for square footage, number of bedrooms, and location.
+- $$\( β₀ \)$$ is the intercept.
+- $$\( β₁, β₂, β₃ \)$$ are the coefficients for square footage, number of bedrooms, and location.
 - "Location" would be a categorical variable (e.g., "Urban" or "Suburban"), which would need to be transformed into a dummy variable using one-hot encoding.
 
 **Preprocessing Categorical Variables:**
@@ -145,27 +145,27 @@ print('Intercept:', model.intercept_)
 1. **Adjusted R-Squared:**  
    A more reliable measure for multiple regression models as it accounts for the number of predictors. Higher values indicate a better fit, but it penalizes unnecessary predictors.
 
-   \[
+   $$\[
    \text{Adjusted } R^2 = 1 - \left(\frac{(1 - R^2)(n - 1)}{n - p - 1}\right)
-   \]
+   \]$$
    Where:
-   - \( R^2 \) is the coefficient of determination.
-   - \( n \) is the number of observations.
-   - \( p \) is the number of predictors.
+   - $$\( R^2 \)$$ is the coefficient of determination.
+   - $$\( n \)$$ is the number of observations.
+   - $$\( p \)$$ is the number of predictors.
 
 2. **Mean Absolute Error (MAE):**  
    The average of the absolute errors between predicted and actual values. A lower MAE indicates better model performance.
 
-   \[
+   $$\[
    MAE = \frac{1}{n} \sum_{i=1}^{n} \left| y_i - \hat{y}_i \right|
-   \]
+   \]$$
 
 3. **Root Mean Squared Error (RMSE):**  
    The square root of the average of squared differences between predicted and actual values. It is sensitive to large errors.
 
-   \[
+   $$\[
    RMSE = \sqrt{\frac{1}{n} \sum_{i=1}^{n} \left( y_i - \hat{y}_i \right)^2}
-   \]
+   \]$$
 
 ---
 
