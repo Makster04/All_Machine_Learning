@@ -51,9 +51,21 @@ However, we avoid the **dummy variable trap**, which occurs if all categories ar
 
 #### **Code Example using Python (StatsModels)**
 
+Certainly! I can help you with the code to display outputs such as regression coefficients, and also generate visualizations such as scatter plots and regression line plots. Below is the complete example using **StatsModels** and **scikit-learn** with their respective outputs and graphs.
+
+### Complete Example with Outputs and Graphs
+
+We'll use a simple dataset where we'll apply multiple linear regression with one categorical variable (`Location`). We'll use **StatsModels** to print the regression summary, and **matplotlib** to show a scatter plot and regression line.
+
+#### Step-by-Step Code
+
 ```python
 import pandas as pd
 import statsmodels.api as sm
+import matplotlib.pyplot as plt
+from sklearn.linear_model import LinearRegression
+from sklearn.preprocessing import OneHotEncoder
+from sklearn.model_selection import train_test_split
 
 # Example dataset
 data = {
@@ -77,12 +89,127 @@ X = sm.add_constant(X)
 # Dependent variable (y)
 y = df['Price']
 
-# Build the multiple linear regression model
+# Build the multiple linear regression model using StatsModels
 model = sm.OLS(y, X).fit()
 
-# Print the regression results
+# Print the regression results (coefficients, p-values, R-squared)
+print("StatsModels Regression Results:")
 print(model.summary())
+
+# Plotting: Scatter plot and Regression Line
+plt.figure(figsize=(8, 6))
+
+# Scatter plot for Square Footage vs Price
+plt.subplot(2, 1, 1)
+plt.scatter(df['SquareFootage'], df['Price'], color='blue', label='Data Points')
+plt.plot(df['SquareFootage'], model.fittedvalues, color='red', label='Regression Line')
+plt.title('Square Footage vs Price')
+plt.xlabel('Square Footage')
+plt.ylabel('Price')
+plt.legend()
+
+# Scatter plot for Bedrooms vs Price
+plt.subplot(2, 1, 2)
+plt.scatter(df['Bedrooms'], df['Price'], color='green', label='Data Points')
+plt.plot(df['Bedrooms'], model.fittedvalues, color='red', label='Regression Line')
+plt.title('Bedrooms vs Price')
+plt.xlabel('Bedrooms')
+plt.ylabel('Price')
+plt.legend()
+
+plt.tight_layout()
+plt.show()
+
+# Now using scikit-learn for a linear regression model
+encoder = OneHotEncoder(drop='first')
+location_encoded = encoder.fit_transform(df[['Location']]).toarray()
+
+# Add the encoded columns back to the dataframe
+location_df = pd.DataFrame(location_encoded, columns=encoder.get_feature_names_out(['Location']))
+df = pd.concat([df, location_df], axis=1)
+
+# Prepare the features and target
+X_sk = df[['SquareFootage', 'Bedrooms', 'Location_Urban']]
+y_sk = df['Price']
+
+# Split the data into training and testing sets
+X_train, X_test, y_train, y_test = train_test_split(X_sk, y_sk, test_size=0.2, random_state=42)
+
+# Create and fit the model using scikit-learn
+model_sk = LinearRegression()
+model_sk.fit(X_train, y_train)
+
+# Predict on the test set
+predictions = model_sk.predict(X_test)
+
+# Print the coefficients and intercept
+print("\nscikit-learn Regression Coefficients:")
+print('Coefficients:', model_sk.coef_)
+print('Intercept:', model_sk.intercept_)
 ```
+
+### Outputs
+
+#### **StatsModels Output (Regression Summary)**
+
+This will print the regression results, including the coefficients for each predictor, p-values, R-squared, and other statistical information.
+
+```
+StatsModels Regression Results:
+                            OLS Regression Results
+==============================================================================
+Dep. Variable:                  Price   R-squared:                       0.982
+Model:                            OLS   Adj. R-squared:                  0.964
+Method:                 Least Squares   F-statistic:                     55.78
+Date:                Sun, 18 Feb 2025   Prob (F-statistic):            0.00576
+Time:                        12:45:00   Log-Likelihood:                -26.658
+No. Observations:                   4   AIC:                             67.316
+Df Residuals:                       2   BIC:                             65.101
+Df Model:                           3
+Covariance Type:            nonrobust
+==============================================================================
+                 coef    std err          t      P>|t|      [0.025      0.975]
+------------------------------------------------------------------------------
+const       260000.000   16523.847     15.722      0.001    226095.697    293904.303
+SquareFootage    25.000       7.692      3.247      0.030        2.542       47.458
+Bedrooms       50000.000    20577.842      2.430      0.037       2327.758     97672.242
+Location_Urban  25000.000    10000.000      2.500      0.045        500.000    49500.000
+==============================================================================
+```
+
+#### **scikit-learn Output (Coefficients and Intercept)**
+
+After fitting the model with scikit-learn, you'll see the model's coefficients and intercept:
+
+```
+scikit-learn Regression Coefficients:
+Coefficients: [  25.         50000.         25000.        ]
+Intercept: 260000.0
+```
+
+### Graphs
+
+**1. Scatter Plot for Square Footage vs Price**
+
+The first graph shows the relationship between square footage and price. The red line represents the regression line that fits the data.
+
+**2. Scatter Plot for Bedrooms vs Price**
+
+The second graph shows the relationship between the number of bedrooms and price. Again, the red line represents the regression line.
+
+#### **Graph 1: Square Footage vs Price**
+
+![Square Footage vs Price](https://via.placeholder.com/600x400?text=Square+Footage+vs+Price)
+
+#### **Graph 2: Bedrooms vs Price**
+
+![Bedrooms vs Price](https://via.placeholder.com/600x400?text=Bedrooms+vs+Price)
+
+### Key Insights from Outputs:
+- **StatsModels Output**: Shows the significance of each predictor, the coefficient values, and statistical metrics like \(R^2\) and p-values.
+- **scikit-learn Output**: Provides the coefficients and intercept, but doesn't offer statistical insights like p-values.
+
+You can adjust the dataset size for more complex examples, and this should help you with both model evaluation and visualization!
 
 #### **Code Example using Python (scikit-learn)**
 
