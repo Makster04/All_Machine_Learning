@@ -24,13 +24,13 @@ Multiple linear regression is an extension of simple linear regression that mode
 
 The equation for a multiple linear regression model is:
 
-\[ Y = β₀ + β₁X₁ + β₂X₂ + ... + βₚXₚ + ϵ \]
+$$\[ Y = β₀ + β₁X₁ + β₂X₂ + ... + βₚXₚ + ϵ \]$$
 
 Where:
-- \( Y \) is the dependent variable.
-- \( β₀ \) is the intercept.
-- \( β₁, β₂, ..., βₚ \) are the coefficients for each independent variable \( X₁, X₂, ..., Xₚ \).
-- \( ϵ \) is the error term (residuals).
+- $$\( Y \)$$ is the dependent variable.
+- $$\( β₀ \)$$ is the intercept.
+- $$\( β₁, β₂, ..., βₚ \)$$ are the coefficients for each independent variable $$\( X₁, X₂, ..., Xₚ \)$$.
+- $$\( ϵ \)$$ is the error term (residuals).
 
 **Example:**
 Suppose you're predicting the price of a house using square footage, the number of bedrooms, and location. In this case, the dependent variable \( Y \) is the price of the house, and the independent variables are square footage, number of bedrooms, and location.
@@ -117,6 +117,88 @@ Skew:                           0.000   Prob(JB):                        0.896
 Kurtosis:                       1.852   Cond. No.                     4.37e+04
 ==============================================================================
 ```
+---
+
+To clarify the terms and how they relate to the data:
+
+- **Continuous numeric predictor**: This is a variable that has a continuous scale, like `SquareFootage`, which can take any value within a range.
+- **Discrete numeric predictor**: This is a variable that takes specific integer values, like `Bedrooms`, which can only take certain integer values.
+- **String categorical predictor**: This is a categorical variable represented by string labels, like `Location` which is a categorical feature (Urban/Suburban).
+- **Discrete categorical predictor**: This is similar to a categorical variable, but instead of being a string, it can be a set of integers or specific groups, like `Location_Urban` (coded as binary 0 or 1).
+
+We'll calculate the relationships with `Price` and visualize them. Here's how we'll proceed:
+
+1. Plot the relationship between `SquareFootage` (continuous numeric) and `Price`.
+2. Plot the relationship between `Bedrooms` (discrete numeric) and `Price`.
+3. Plot the relationship between `Location` (string categorical) and `Price`.
+4. Plot the relationship between `Location_Urban` (discrete categorical) and `Price`.
+
+### 1. Continuous Numeric Predictor (`SquareFootage`)
+
+We'll use a scatter plot to show the relationship between `SquareFootage` and `Price`.
+
+### 2. Discrete Numeric Predictor (`Bedrooms`)
+
+We'll use a scatter plot for this as well but interpret it in terms of distinct points for each bedroom count.
+
+### 3. String Categorical Predictor (`Location`)
+
+We'll use a box plot to show how `Price` varies across the different locations.
+
+### 4. Discrete Categorical Predictor (`Location_Urban`)
+
+We'll use a box plot as well to compare `Price` between `Urban` (coded as 1) and `Suburban` (coded as 0).
+
+Let me show you the implementation of each visualization.
+
+### Code:
+```python
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Set up the plotting environment
+sns.set(style="whitegrid")
+
+# 1. Continuous numeric predictor (SquareFootage vs Price)
+plt.figure(figsize=(10, 6))
+sns.scatterplot(x='SquareFootage', y='Price', data=df)
+plt.title('Price vs SquareFootage')
+plt.xlabel('SquareFootage')
+plt.ylabel('Price')
+plt.show()
+
+# 2. Discrete numeric predictor (Bedrooms vs Price)
+plt.figure(figsize=(10, 6))
+sns.scatterplot(x='Bedrooms', y='Price', data=df)
+plt.title('Price vs Bedrooms')
+plt.xlabel('Bedrooms')
+plt.ylabel('Price')
+plt.show()
+
+# 3. String categorical predictor (Location vs Price)
+plt.figure(figsize=(10, 6))
+sns.boxplot(x='Location', y='Price', data=df)
+plt.title('Price Distribution by Location')
+plt.xlabel('Location')
+plt.ylabel('Price')
+plt.show()
+
+# 4. Discrete categorical predictor (Location_Urban vs Price)
+plt.figure(figsize=(10, 6))
+sns.boxplot(x='Location_Urban', y='Price', data=df_encoded)
+plt.title('Price Distribution by Urban vs Suburban')
+plt.xlabel('Location_Urban')
+plt.ylabel('Price')
+plt.show()
+```
+
+### Output (Visualizations):
+This code will generate four plots:
+1. **Scatter plot** of `SquareFootage` vs `Price`.
+2. **Scatter plot** of `Bedrooms` vs `Price`.
+3. **Box plot** of `Location` vs `Price`.
+4. **Box plot** of `Location_Urban` vs `Price`.
+
 
 ---
 
