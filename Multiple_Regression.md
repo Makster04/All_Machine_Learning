@@ -90,6 +90,33 @@ model = sm.OLS(y, X).fit()
 # Print the regression results
 print(model.summary())
 ```
+Output:
+```
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                  Price   R-squared:                       1.000
+Model:                            OLS   Adj. R-squared:                    nan
+Method:                 Least Squares   F-statistic:                       nan
+Date:                Wed, 19 Feb 2025   Prob (F-statistic):                nan
+Time:                        03:51:50   Log-Likelihood:                 77.908
+No. Observations:                   4   AIC:                            -147.8
+Df Residuals:                       0   BIC:                            -150.3
+Df Model:                           3                                         
+Covariance Type:            nonrobust                                         
+==================================================================================
+                     coef    std err          t      P>|t|      [0.025      0.975]
+----------------------------------------------------------------------------------
+const               5e+04        inf          0        nan         nan         nan
+SquareFootage           0        inf          0        nan         nan         nan
+Bedrooms            1e+05        inf          0        nan         nan         nan
+Location_Urban      5e+04        inf          0        nan         nan         nan
+==============================================================================
+Omnibus:                          nan   Durbin-Watson:                   0.091
+Prob(Omnibus):                    nan   Jarque-Bera (JB):                0.220
+Skew:                           0.000   Prob(JB):                        0.896
+Kurtosis:                       1.852   Cond. No.                     4.37e+04
+==============================================================================
+```
 
 ---
 
