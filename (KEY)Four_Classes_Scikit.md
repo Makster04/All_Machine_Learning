@@ -40,7 +40,13 @@ estimator.fit(X, y)
 print("Coefficients:", estimator.coef_)
 print("Intercept:", estimator.intercept_)
 ```
-
+Output:
+```
+Coefficients: [2.]
+Intercept: 0.0
+```
+**Result**:
+The model fits a perfect line with equation y = 2X. This result is good, as the model captures the relationship perfectly.
 ---
 
 ### 2. **Transformer**
@@ -78,6 +84,20 @@ X_scaled = scaler.fit_transform(X)
 print("Original Data:\n", X)
 print("Transformed Data:\n", X_scaled)
 ```
+Output:
+```
+Original Data:
+ [[1 2]
+  [3 4]
+  [5 6]]
+Transformed Data:
+ [[-1.22474487 -1.22474487]
+  [ 0.          0.        ]
+  [ 1.22474487  1.22474487]]
+```
+**Result**:
+The data is transformed to have mean 0 and standard deviation 1. This is good, as scaling often improves model performance.
+```
 
 ---
 
@@ -111,6 +131,13 @@ classifier.fit(X, y)
 prediction = classifier.predict([[1.5, 1.5]])
 print("Prediction:", prediction)
 ```
+Output:
+```
+Prediction = 1.0
+```
+**Result:**
+The model classifies the input [1.5, 1.5] as 1. If it generalizes well on unseen data, this is good.
+
 #### Note:
 Some additional examples of predictors are:
 - Linear 
@@ -157,7 +184,13 @@ print("Model Accuracy:", accuracy)
 prediction = model.predict([[1.5, 1.5]])
 print("Model Prediction:", prediction)
 ```
-
+Output:
+```
+Model Accuracy: 1.0
+Model Prediction: [1]
+```
+**Result:**
+The model achieves perfect accuracy (1.0), which is excellent on this small dataset, but may not generalize well to larger, unseen data.
 ---
 
 ### Summary Table:
