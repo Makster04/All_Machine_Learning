@@ -181,6 +181,8 @@ As stated previously, these scikit-learn classes are not mutually exclusive.
 
 - ```PCA``` is an estimator, a transformer, and a model BUT NOT a predictor.
 
+---
+
 ### Confused about these classes?
 
 **Standard Scaler**
@@ -198,6 +200,8 @@ As stated previously, these scikit-learn classes are not mutually exclusive.
 **Linear Reggression**
 1. One of the most basic and widely used supervised machine learning algorithms.
 2. It models the relationship between a dependent variable *(also called the target variable, 𝑦)* and one or more independent variables *(also called features or predictors, 𝑋)* by fitting a linear equation to the observed data.
+
+---
 
 ### Other Notes
 #### What is the difference between Linear and Logistic?
