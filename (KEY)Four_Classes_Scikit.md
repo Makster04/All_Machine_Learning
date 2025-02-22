@@ -45,9 +45,7 @@ Output:
 Coefficients: [2.]
 Intercept: 0.0
 ```
-
-**Result**
-
+**Result**:
 The model fits a perfect line with equation y = 2X. This result is good, as the model captures the relationship perfectly.
 ---
 
