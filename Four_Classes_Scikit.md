@@ -45,12 +45,12 @@ A **Transformer** is a type of estimator that transforms input data in some way.
 
 Some transformers also support `fit_transform()`, which combines both steps.
 
-|             | Estimator | Transformer |
-|-------------|-----------|----|
-| **StandardScaler** | ✅ | ✅ |
-| **PCA** | ✅  | ✅ |
-| **KMeans** | ✅ | ✅ |
-| **LinearRegression** | ✅ | x |
+|                      | Estimator | Transformer | 
+|----------------------|-----------|-------------|
+| **StandardScaler**   | ✅ | ✅ | 
+| **PCA**              | ✅ | ✅ |
+| **KMeans**           | ✅ | ✅ |
+| **LinearRegression** | ✅ | ❌ |
 
 
 **Example**:  
@@ -79,6 +79,13 @@ print("Transformed Data:\n", X_scaled)
 **Definition**:  
 A **Predictor** is any estimator that can make predictions using a `predict()` method. All classifiers and regressors in Scikit-learn are predictors.
 
+|                      | Estimator | Transformer | Predictor |
+|----------------------|-----------|-------------|-----------|
+| **StandardScaler**   | ✅ | ✅ | ❌ | 
+| **PCA**              | ✅ | ✅ | ❌ |
+| **KMeans**           | ✅ | ✅ | ✅ |
+| **LinearRegression** | ✅ | ❌ | ✅ |
+
 **Example**:  
 A `DecisionTreeClassifier` is an example of a predictor.
 
@@ -104,6 +111,13 @@ print("Prediction:", prediction)
 ### 4. **Model**
 **Definition**:  
 A **Model** is a more general term encompassing both estimators and predictors. It refers to a fitted instance of an algorithm that can make predictions on new data. A model is typically an instance of a predictor that has been trained.
+
+|                      | Estimator | Transformer | Predictor | Model |
+|----------------------|-----------|-------------|-----------|-------|
+| **StandardScaler**   | ✅ | ✅ | ❌ | ❌
+| **PCA**              | ✅ | ✅ | ❌ | ✅
+| **KMeans**           | ✅ | ✅ | ✅ | ✅
+| **LinearRegression** | ✅ | ❌ | ✅ | ✅
 
 **Example**:  
 A trained `RandomForestClassifier` is a model.
