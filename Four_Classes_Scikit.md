@@ -45,6 +45,14 @@ A **Transformer** is a type of estimator that transforms input data in some way.
 
 Some transformers also support `fit_transform()`, which combines both steps.
 
+|             | Estimator | Transformer
+|-------------|-----------|
+| **StandardScaler** | ✅ | ✅ |
+| **PCA** | ✅  | ✅ |
+| **KMeans** | ✅ | ✅ |
+| **LinearRegression** | ✅ | |
+
+
 **Example**:  
 `StandardScaler` is a transformer that standardizes features by removing the mean and scaling to unit variance.
 
