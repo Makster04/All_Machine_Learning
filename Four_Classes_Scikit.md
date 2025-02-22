@@ -178,20 +178,20 @@ As stated previously, these scikit-learn classes are not mutually exclusive.
 ### Confused about these classes?
 
 **Standard Scaler**
-- - A Standard Scaler is a technique used to standardize or scale your features (input data) to make them have zero mean and unit variance.
-- - The idea is to transform your data so that each feature has a similar scale and the model can perform better, especially for algorithms sensitive to feature scaling (like linear models, SVM, or KNN).
+- + A Standard Scaler is a technique used to standardize or scale your features (input data) to make them have zero mean and unit variance.
+- + The idea is to transform your data so that each feature has a similar scale and the model can perform better, especially for algorithms sensitive to feature scaling (like linear models, SVM, or KNN).
 
 **PCA (Principal Component Analysis)**
-- - Dimensionality reduction technique used to reduce the number of variables in a dataset while retaining as much of the original variability (or information) as possible. 
-- - This is often used when dealing with high-dimensional data to make it more manageable, easier to visualize, and often helps with improving performance in machine learning tasks.
+- + Dimensionality reduction technique used to reduce the number of variables in a dataset while retaining as much of the original variability (or information) as possible. 
+- + This is often used when dealing with high-dimensional data to make it more manageable, easier to visualize, and often helps with improving performance in machine learning tasks.
 
 **K-Means (K-Means Clustering)**
-- - An unsupervised machine learning algorithm used for clustering *(cluster refers to a group of data points that are similar to each other based on some measure of similarity or distance.)*
-- - The goal of K-Means is to divide a set of data points into 𝐾 clusters based on their similarity.
+- + An unsupervised machine learning algorithm used for clustering *(cluster refers to a group of data points that are similar to each other based on some measure of similarity or distance.)*
+- + The goal of K-Means is to divide a set of data points into 𝐾 clusters based on their similarity.
 
 **Linear Reggression**
-- - One of the most basic and widely used supervised machine learning algorithms.
-- - It models the relationship between a dependent variable *(also called the target variable, 𝑦)* and one or more independent variables *(also called features or predictors, 𝑋)* by fitting a linear equation to the observed data.
+- + One of the most basic and widely used supervised machine learning algorithms.
+- + It models the relationship between a dependent variable *(also called the target variable, 𝑦)* and one or more independent variables *(also called features or predictors, 𝑋)* by fitting a linear equation to the observed data.
 
 
 
