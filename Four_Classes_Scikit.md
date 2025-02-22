@@ -5,7 +5,7 @@ Scikit-learn provides a robust framework for machine learning in Python. The lib
 ### 1. **Estimator**
 **Definition**:  
 An **Estimator** is any object that can learn from data. It implements a `fit()` method that takes training data and extracts patterns. All machine learning models, transformers, and predictors in Scikit-learn are derived from the `BaseEstimator` class.
-### Estimator:
+
 |             | Estimator |
 |-------------|-----------|
 | **StandardScaler** | ✅ |
