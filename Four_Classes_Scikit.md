@@ -1,4 +1,4 @@
-[x] Scikit-learn provides a robust framework for machine learning in Python. The library is structured around four main classes that help streamline the workflow for building models. Below are explanations, definitions, examples, and Python code snippets related to each class:
+Scikit-learn provides a robust framework for machine learning in Python. The library is structured around four main classes that help streamline the workflow for building models. Below are explanations, definitions, examples, and Python code snippets related to each class:
 
 ---
 
