@@ -50,7 +50,7 @@ Some transformers also support `fit_transform()`, which combines both steps.
 | **StandardScaler** | ✅ | ✅ |
 | **PCA** | ✅  | ✅ |
 | **KMeans** | ✅ | ✅ |
-| **LinearRegression** | ✅ | |
+| **LinearRegression** | ✅ | x |
 
 
 **Example**:  
