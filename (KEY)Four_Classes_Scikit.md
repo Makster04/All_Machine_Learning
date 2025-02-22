@@ -6,6 +6,11 @@ Scikit-learn provides a robust framework for machine learning in Python. The lib
 3. Prdictor
 4. Model
 
+#### Mutable vs Non-Mutable
+- **Mutable types:** Can be changed after creation. Examples include list, dict, set, numpy.ndarray, and pandas.DataFrame.
+- **Immutable types:** Cannot be changed after creation. Examples include int, float, tuple, str, and frozenset.
+
+
 ---
 
 ### 1. **Estimator**
