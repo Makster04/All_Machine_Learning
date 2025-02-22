@@ -6,6 +6,7 @@ Scikit-learn provides a robust framework for machine learning in Python. The lib
 **Definition**:  
 An **Estimator** is any object that can learn from data. It implements a `fit()` method that takes training data and extracts patterns. All machine learning models, transformers, and predictors in Scikit-learn are derived from the `BaseEstimator` class.
 
+
 **Example**:  
 A `LinearRegression` model is an example of an estimator.
 
@@ -117,9 +118,20 @@ print("Model Prediction:", prediction)
 ### Summary Table:
 | Class       | Purpose |
 |-------------|---------|
-| **Estimator** | Learns from data using `fit()` |
-| **Transformer** | Transforms data using `transform()` |
-| **Predictor** | Makes predictions using `predict()` |
-| **Model** | A trained instance of a predictor |
+| **Estimator** | If it has a `fit()` method, it's an estimator |
+| **Transformer** | If it has a `transform()` method, it's a transformer |
+| **Predictor** | If it has a `predict()` method, it's a predictor|
+| **Model** | If it has a `score()` method, it's a model |
 
 These classes form the foundation of Scikit-learn and are used throughout its machine learning workflow.
+
+### Overlapping Classes
+
+As stated previously, these scikit-learn classes are not mutually exclusive.
+- ```StandardScaler``` is an estimator and a transformer BUT NOT a predictor or a model.
+
+- ```LinearRegression``` is an estimator, a predictor, and a model BUT NOT a transformer.
+
+- ```KMeans``` is an estimator, a transformer, a predictor, and a model.
+
+- ```PCA``` is an estimator, a transformer, and a model BUT NOT a predictor.
