@@ -105,7 +105,12 @@ classifier.fit(X, y)
 prediction = classifier.predict([[1.5, 1.5]])
 print("Prediction:", prediction)
 ```
-
+#### Note:
+Some additional examples of predictors are:
+- Linear 
+- `LogisticRegression`: a classifier that uses the logistic regression algorithm
+- `KNeighborsRegressor`: a regressor that uses the k-nearest neighbors algorithm
+- `LinearReggresion`: a regressor modeling relationships using linear equations.
 ---
 
 ### 4. **Model**
@@ -120,11 +125,12 @@ A **Model** is a more general term encompassing both estimators and predictors. 
 | **LinearRegression** | ✅ | ❌ | ✅ | ✅
 
 **Example**:  
-A trained `RandomForestClassifier` is a model.
+A trained `RandomForestClassifier` is a model, then you can use the useful `Score` method, which typically returns the accuracy for classification problems.
 
 **Python Code**:
 ```python
 from sklearn.ensemble import RandomForestClassifier
+import numpy as np
 
 # Sample data
 X = np.array([[0, 0], [1, 1], [2, 2], [3, 3]])
@@ -135,6 +141,11 @@ model = RandomForestClassifier(n_estimators=10)
 
 # Training the model
 model.fit(X, y)
+
+# Evaluating the model using score method (accuracy)
+accuracy = model.score(X, y)
+
+print("Model Accuracy:", accuracy)
 
 # Making a prediction
 prediction = model.predict([[1.5, 1.5]])
@@ -163,3 +174,24 @@ As stated previously, these scikit-learn classes are not mutually exclusive.
 - ```KMeans``` is an estimator, a transformer, a predictor, and a model.
 
 - ```PCA``` is an estimator, a transformer, and a model BUT NOT a predictor.
+
+### Confused about these classes?
+
+**Standard Scaler**
+- A Standard Scaler is a technique used to standardize or scale your features (input data) to make them have zero mean and unit variance.
+- The idea is to transform your data so that each feature has a similar scale and the model can perform better, especially for algorithms sensitive to feature scaling (like linear models, SVM, or KNN).
+
+**PCA (Principal Component Analysis)**
+- Dimensionality reduction technique used to reduce the number of variables in a dataset while retaining as much of the original variability (or information) as possible. 
+- This is often used when dealing with high-dimensional data to make it more manageable, easier to visualize, and often helps with improving performance in machine learning tasks.
+
+**K-Means (K-Means Clustering)**
+- An unsupervised machine learning algorithm used for clustering *(cluster refers to a group of data points that are similar to each other based on some measure of similarity or distance.)*
+- The goal of K-Means is to divide a set of data points into 𝐾 clusters based on their similarity.
+
+**Linear Reggression**
+- One of the most basic and widely used supervised machine learning algorithms.
+- It models the relationship between a dependent variable *(also called the target variable, 𝑦)* and one or more independent variables *(also called features or predictors, 𝑋)* by fitting a linear equation to the observed data.
+
+
+
