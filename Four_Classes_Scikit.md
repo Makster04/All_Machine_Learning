@@ -46,7 +46,7 @@ A **Transformer** is a type of estimator that transforms input data in some way.
 Some transformers also support `fit_transform()`, which combines both steps.
 
 |             | Estimator | Transformer |
-|-------------|-----------|
+|-------------|-----------|----|
 | **StandardScaler** | ✅ | ✅ |
 | **PCA** | ✅  | ✅ |
 | **KMeans** | ✅ | ✅ |
