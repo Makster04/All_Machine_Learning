@@ -1,4 +1,14 @@
-Variance
-Parameter
-Slope
-Dimension
+- Variance
+- Parameter
+- Slope
+- Dimension
+- Dependent Variable (Y): The outcome variable that the model aims to predict.
+- Independent Variables (X): The input variables used to predict the dependent variable.
+- Coefficients (β): The estimated values representing the relationship between each independent variable and the dependent variable.
+- Intercept (β₀): The value of the dependent variable when all independent variables are equal to zero.
+- Dummy Variables: Categorical variables transformed into binary variables (0 or 1) for use in regression models.
+- One-Hot Encoding: A technique to convert categorical variables into binary variables, where each category is represented by a separate column.
+- Adjusted R-Squared: A modified version of R-Squared that adjusts for the number of predictors, providing a more accurate measure when there are multiple predictors.
+- R-Squared: The proportion of the variance in the dependent variable that is predictable from the independent variables.
+- Mean Absolute Error (MAE): The average of the absolute errors between the predicted and actual values.
+- Root Mean Squared Error (RMSE): The square root of the average of the squared differences between predicted and actual values.
