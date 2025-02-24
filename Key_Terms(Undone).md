@@ -21,7 +21,8 @@
 - **Adjusted R-Squared**: A refined version of R-Squared that adjusts for the number of predictors, preventing overestimation.  
 - **R-Squared**: A statistical measure that explains the proportion of variance in the dependent variable accounted for by independent variables.  
 - **Mean Absolute Error (MAE)**: The average absolute difference between predicted and actual values, measuring prediction accuracy.  
-- **Root Mean Squared Error (RMSE)**: The square root of the mean squared differences between predicted and actual values, penalizing larger errors.  
+- **Root Mean Squared Error (RMSE)**: The square root of the mean squared differences between predicted and actual values, penalizing larger errors.
+- **Mean Squared Error (MSE):** measures the average squared difference between predicted and actual values, reflecting the model's accuracy. Lower MSE indicates better model performance, with fewer errors in predictions.
 - **Validation Performance**: The accuracy or effectiveness of a model measured on unseen validation data.  
 - **Model Performance**: The overall effectiveness of a predictive model, evaluated using metrics like accuracy, MAE, and RMSE.  
 
