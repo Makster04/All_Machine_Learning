@@ -18,6 +18,7 @@
 - **Cross Validation:** A model evaluation technique where the dataset is split into multiple subsets (folds). The model is trained on some folds and tested on the remaining fold(s), repeating the process to assess performance.
 - **Training data:** Used to train the model. The model learns patterns, relationships, and parameters from this data.
 - **Test data:** Used to evaluate the model's performance after training. It helps assess how well the model generalizes to unseen data.
+-  **Generalizes to unseen data:** It means the model performs well on new, previously unseen data that wasn't part of its training set.
 
 ### **Model Evaluation Metrics**  
 - **Adjusted R-Squared**: A refined version of R-Squared that adjusts for the number of predictors, preventing overestimation.  
