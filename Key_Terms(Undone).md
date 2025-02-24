@@ -41,6 +41,7 @@
 - **OLS (Ordinary Least Squares):** A statistical method used in linear regression to estimate the relationship between variables by minimizing the sum of squared differences between observed and predicted values.
 - **Hyperparameter:** A parameter set before model training that controls the learning process, such as learning rate or number of layers in a neural network. It is not learned from data.
 - **Polynomial:** Refer to transformations of input features into higher-degree terms (e.g., squared, cubic) to capture non-linear relationships, enhancing model flexibility for complex patterns in data.
+- **Data Leakage**: Leads to overconfident estimates of model performance during the validation and testing phases.
 
 L1 metric is absolute magnitude of the weights 
 
