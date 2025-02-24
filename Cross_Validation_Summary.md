@@ -163,4 +163,10 @@ print("Test scores:", train_vs_test['test_score'])
 - **`cross_val_score`** returns only the validation scores for each split.
 - **`cross_validate`** returns a more detailed output, including timing information (`fit_time`, `score_time`) and support for multiple scoring metrics.
 
+This terms in the code:
+- **linreg:** This refers to the machine learning model being evaluated. In this case, linreg is an instance of the LinearRegression model from Scikit-learn.
+- **X:** This represents the input features (or data). It's a 2D array or matrix where each row corresponds to one sample (data point) and each column corresponds to one feature (input variable).
+- **y:** This is the target variable (or labels). It's a 1D array or vector where each element corresponds to the target value for a particular sample.
+**cv=10:** The cv parameter specifies the number of splits (or "folds") for cross-validation. 
+
 Both functions allow flexibility in customizing cross-validation settings, such as the number of splits and the scoring metric used, making them useful for evaluating machine learning models.
