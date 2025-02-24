@@ -86,3 +86,81 @@ print("Mean accuracy:", scores.mean())
 | **Time Series CV**         | Maintains temporal dependencies        | Can be biased if not handled carefully  | Time-dependent data                 |
 
 Each strategy has its advantages and is suited for different types of data and modeling needs. Cross-validation is often preferred for more robust performance estimates, especially when working with smaller datasets or when model generalization is crucial.
+
+---
+**Cross-Validation in Scikit-Learn Summary:**
+
+Scikit-learn provides tools for performing cross-validation, primarily through two functions: `cross_val_score` and `cross_validate`.
+
+1. **`cross_val_score`**:
+   - This function evaluates a model using cross-validation and returns the validation score for each split.
+   - By default, it performs 5 splits and uses the `.score()` method of the model (e.g., R-squared for linear regression).
+   - You can adjust the number of splits with the `cv` parameter and choose a different scoring metric (e.g., negative mean squared error using `scoring="neg_mean_squared_error"`).
+
+  ```python
+from sklearn.model_selection import cross_val_score
+from sklearn.linear_model import LinearRegression
+
+# Example data
+X = [[1, 2], [2, 3], [3, 4], [4, 5], [5, 6]]
+y = [1, 2, 3, 4, 5]
+
+# Create a linear regression model
+linreg = LinearRegression()
+
+# Perform cross-validation with 5 splits (default)
+scores = cross_val_score(linreg, X, y)
+print("Cross-validation scores (R-squared):", scores)
+
+# Perform cross-validation with 10 splits
+scores_10 = cross_val_score(linreg, X, y, cv=10)
+print("Cross-validation scores (R-squared) with 10 splits:", scores_10)
+
+# Use Mean Squared Error as the scoring metric
+mse_scores = cross_val_score(linreg, X, y, scoring="neg_mean_squared_error")
+print("Cross-validation scores (Negative MSE):", mse_scores)
+```
+---
+
+2. **`cross_validate`**:
+   - This function provides more detailed output, including fit time, score time, and test scores for each split.
+   - It also supports multiple scoring metrics at once (e.g., both R-squared and negative MSE).
+   - Additionally, you can compare train vs. test scores by setting `return_train_score=True` to detect overfitting.
+
+```python
+from sklearn.model_selection import cross_validate
+from sklearn.linear_model import LinearRegression
+
+# Example data
+X = [[1, 2], [2, 3], [3, 4], [4, 5], [5, 6]]
+y = [1, 2, 3, 4, 5]
+
+# Create a linear regression model
+linreg = LinearRegression()
+
+# Perform cross-validation and get fit times, score times, and test scores
+results = cross_validate(linreg, X, y)
+print("Cross-validation results (test scores):", results['test_score'])
+print("Fit times:", results['fit_time'])
+print("Score times:", results['score_time'])
+
+# Perform cross-validation with 10 splits
+results_10 = cross_validate(linreg, X, y, cv=10)
+print("Cross-validation results with 10 splits (test scores):", results_10['test_score'])
+
+# Get scores for multiple metrics (R-squared and Negative MSE)
+multi_scores = cross_validate(linreg, X, y, scoring=["r2", "neg_mean_squared_error"])
+print("Cross-validation scores (R-squared):", multi_scores['test_r2'])
+print("Cross-validation scores (Negative MSE):", multi_scores['test_neg_mean_squared_error'])
+
+# Compare train vs. test scores
+train_vs_test = cross_validate(linreg, X, y, return_train_score=True)
+print("Train scores:", train_vs_test['train_score'])
+print("Test scores:", train_vs_test['test_score'])
+```
+
+### Explanation:
+- **`cross_val_score`** returns only the validation scores for each split.
+- **`cross_validate`** returns a more detailed output, including timing information (`fit_time`, `score_time`) and support for multiple scoring metrics.
+
+Both functions allow flexibility in customizing cross-validation settings, such as the number of splits and the scoring metric used, making them useful for evaluating machine learning models.
