@@ -46,25 +46,16 @@ L1 metric is absolute magnitude of the weights
 
 ### Questions & Comments heard(Undone)
 
-- When a Graph is too stiff
-- More data leads to less overfitting
-- cross-validation: Gives us a way to test statistical robustness of model performacne
-
-- How do we lower the variance?
-- Way to limit/deal with high variance?
-- Why would you want to standardize/normalize features?
-
-- True test/hold-out test:
-
-- Unregulazied polynomial function
-
-- penalzing makes them more rigid, doesnt make a model that is a true value of the wights)
-
-
-- Take you best model and put it in the X-train_processed
-
-
-
-- Polynomial Model was poor prediciton because error is overfitting 
-- L2 Regulazied the Polynomial
-- Much better test performance than unregulazed polynominal
+- **When a Graph is too stiff**: It lacks flexibility, making it difficult to capture trends or respond to data changes.
+- **More data leads to less overfitting**: Larger datasets allow models to generalize better, reducing the risk of overfitting to noise.
+- **Cross-validation**: It helps assess the model's robustness by testing it on different data splits, ensuring consistent performance.
+- **How do we lower the variance?**: By using regularization, increasing training data, or applying simpler models to reduce overfitting.
+- **Way to limit/deal with high variance?**: Regularization techniques like L1 or L2 penalization and reducing model complexity can help control high variance.
+- **Why would you want to standardize/normalize features?**: To ensure features with different scales contribute equally, improving model performance and stability.
+- **True test/hold-out test**: This test evaluates model performance on unseen data, simulating real-world predictions and checking generalization ability.
+- **Unregularized polynomial function**: Polynomial models without regularization tend to overfit, capturing noise rather than underlying patterns in the data.
+- **Penalizing makes them more rigid, doesn’t make a model that is a true value of the weights**: Penalizing reduces model complexity but doesn't necessarily reflect the true relationship in the data.
+- **Take your best model and put it in the X-train_processed**: After model optimization, place it in the processed training set to evaluate and train with clean data.
+- **Polynomial Model was poor prediction because error is overfitting**: High-degree polynomials can model noise in the training set, leading to poor generalization to new data.
+- **L2 Regularized the Polynomial**: Regularizing the polynomial reduces overfitting, leading to improved model performance and better generalization on unseen data.
+- **Much better test performance than unregularized polynomial**: L2 regularization helps the polynomial model avoid overfitting, leading to more accurate predictions on test data.
