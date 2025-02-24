@@ -102,7 +102,6 @@ Transformed Data:
 ```
 **Result**:
 The data is transformed to have mean 0 and standard deviation 1. This is good, as scaling often improves model performance.
-```
 
 ---
 
