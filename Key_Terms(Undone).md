@@ -12,3 +12,16 @@
 - R-Squared: The proportion of the variance in the dependent variable that is predictable from the independent variables.
 - Mean Absolute Error (MAE): The average of the absolute errors between the predicted and actual values.
 - Root Mean Squared Error (RMSE): The square root of the average of the squared differences between predicted and actual values.
+- Validation Performance
+- Model Performance
+
+- Training Data
+
+Questions
+- More data leads to less overfitting
+- cross-validation: Gives us a way to test statistical robustness of model performacne
+
+- How do we lower the variance?
+- Way to limit/deal with high variance?
+
+- True test/hold-out test:
