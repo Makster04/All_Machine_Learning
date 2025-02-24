@@ -20,6 +20,7 @@
 - **Training data:** Used to train the model. The model learns patterns, relationships, and parameters from this data.
 - **Test data:** Used to evaluate the model's performance after training. It helps assess how well the model generalizes to unseen data.
 -  **Generalizes to unseen data:** It means the model performs well on new, previously unseen data that wasn't part of its training set.
+-  **Scoring Argument:** refers to a parameter used to define how a model's performance is evaluated. It specifies the metric (e.g., accuracy, precision) used during model evaluation.
 
 ### **Model Evaluation Metrics**  
 - **Adjusted R-Squared**: A refined version of R-Squared that adjusts for the number of predictors, preventing overestimation.  
