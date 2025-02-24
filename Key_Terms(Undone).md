@@ -16,6 +16,8 @@
 - **Binary Columns**: Columns in a dataset that contain only two possible values, typically 0 or 1. These columns represent categorical data in a binary format, often used for classification tasks.
 - **StandardScaler:** A preprocessing technique in machine learning that standardizes features by removing the mean and scaling to unit variance. It transforms data to have a mean of 0 and a standard deviation of 1.
 - **Cross Validation:** A model evaluation technique where the dataset is split into multiple subsets (folds). The model is trained on some folds and tested on the remaining fold(s), repeating the process to assess performance.
+- **Training data:** Used to train the model. The model learns patterns, relationships, and parameters from this data.
+- **Test data:** Used to evaluate the model's performance after training. It helps assess how well the model generalizes to unseen data.
 
 ### **Model Evaluation Metrics**  
 - **Adjusted R-Squared**: A refined version of R-Squared that adjusts for the number of predictors, preventing overestimation.  
