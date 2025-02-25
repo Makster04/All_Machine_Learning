@@ -2,6 +2,8 @@
 
 ### Other terms or definitions (Yet to be placed in a category):
 - **Log-Loss Function:** Log-Loss function (Logarithmic Loss) measures a classification model’s performance by quantifying the difference between predicted probabilities and actual binary labels.
+- **Training**: The process where a machine learning model learns patterns from labeled data by adjusting its parameters to minimize errors using optimization algorithms.  
+- **Testing**: The evaluation phase where a trained model is assessed on unseen data to measure its performance, generalization ability, and accuracy in real-world scenarios.
 - **Binary Cross-Entropy (BCE)** is a loss function measuring the difference between predicted and actual binary labels, used in classification tasks to optimize model accuracy via logarithmic loss.
 - **Optimization**: The process of adjusting model parameters to minimize a loss function and improve performance, often using algorithms like Gradient Descent.  
 - **Classification**: A supervised learning task where a model categorizes input data into predefined classes, such as spam detection or image recognition.  
