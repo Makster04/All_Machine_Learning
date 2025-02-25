@@ -92,3 +92,15 @@ This structure categorizes each concept properly and organizes them in a logical
 12. **L2 Regularized the Polynomial**: Regularizing the polynomial reduces overfitting, leading to improved model performance and better generalization on unseen data.
 
 13. **Much better test performance than unregularized polynomial**: L2 regularization helps the polynomial model avoid overfitting, leading to more accurate predictions on test data.
+14. **High Bias, Low Weight**:  
+The decision boundary will be overly simplistic, possibly linear, with poor fitting to the data. It will have low flexibility and underfit, resulting in poor performance.
+---
+
+### Speaking of Graphs
+- **High Bias, Low Weight**: The decision boundary will be overly simplistic, possibly linear, with poor fitting to the data. It will have low flexibility and underfit, resulting in poor performance.
+
+- **Low Bias, High Weight**: The decision boundary will be complex, closely fitting the data. However, high weights may cause overfitting, resulting in a sharp boundary that captures noise, leading to high variance.
+
+- **High Bias, High Weight**: The decision boundary might be complex but still not fit the data well. It could be highly curved, but the model's generalization is poor due to high bias.
+
+- **Low Bias, Low Weight**: The decision boundary will be moderately flexible, capturing data patterns without overfitting noise. The model should generalize well but may lack sufficient complexity for all patterns.
