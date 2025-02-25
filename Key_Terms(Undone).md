@@ -1,6 +1,9 @@
 ## Important terms & defintions in ML (Still more to be put)
 
 Here is a categorized and ordered list of the provided concepts, based on their relevance to each category:
+Log-Loss Function
+Binary Cross-entropy
+Optimization: No closed form solution for w and b minmizing cost function
 
 ### Statistical Concepts
 1. **Parameter**: A numerical characteristic that defines a statistical model or distribution, such as a mean or regression coefficient.
