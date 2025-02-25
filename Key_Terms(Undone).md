@@ -64,9 +64,21 @@ Here is a categorized and ordered list of the provided concepts, based on their 
 15. **K-fold Cross Validation**: Expands on the idea of training and test splits by splitting the entire dataset into K equal sections of data.
 16. **Cross Validation**: A model evaluation technique where the dataset is split into multiple subsets (folds). The model is trained on some folds and tested on the remaining fold(s), repeating the process to assess performance.
 
+
+### Feature Selection
+**Feature selection** is the process by which you select a subset of features relevant for model construction. Feature selection comes with several benefits, the most obvious being the improvement in performance of a machine learning algorithm. Other benefits include:
+- ***Decrease in computational complexity:*** As the number of features is reduced in a model, the easier it will be to compute the parameters of your model. It will also mean a decrease in the amount of data storage required to maintain the features of your model
+- ***Understanding your data:*** In the process of feature selection, you will potentially gain more understanding of how features relate to one another
+
+1. **Domain Knowledge**: Expertise in a specific area, providing context and understanding to improve problem-solving, decision-making, and model development by leveraging relevant information, concepts, and experiences from the field.
+
+2. **Filter Methods**: Feature selection techniques that assess individual features’ relevance based on statistical tests, independently of machine learning algorithms, aiming to improve model performance by removing irrelevant or redundant features.
+
+3. **Wrapper Methods**: Feature selection techniques that evaluate subsets of features by training and testing models, optimizing feature combinations through iterative processes like forward or backward selection to maximize predictive accuracy.
+
+4. **Embedded Methods**: Feature selection integrated into model training, where algorithms like decision trees or LASSO perform feature selection during the learning process, balancing performance and model complexity efficiently.
 ---
 
-This structure categorizes each concept properly and organizes them in a logical order based on how they relate to each other in statistics, regression analysis, model evaluation, and machine learning.
 
 ### Questions & Comments heard(Undone)
 1. **When a Graph is too stiff**: It lacks flexibility, making it difficult to capture trends or respond to data changes.
