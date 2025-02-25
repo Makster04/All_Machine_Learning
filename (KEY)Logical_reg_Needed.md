@@ -96,6 +96,8 @@ plt.legend()
 plt.show()
 ```
 📌 **Problem**: Predictions are not bounded between [0,1].
+![image](https://github.com/user-attachments/assets/2616ae26-5a3e-489a-8a3b-b16ea7ac18c2)
+
 
 ---
 
@@ -119,6 +121,7 @@ plt.legend()
 plt.show()
 ```
 ✅ **Solution**: Outputs are now between **0 and 1**, making them interpretable as probabilities.
+![image](https://github.com/user-attachments/assets/0936667f-6193-40ed-a801-ea33adda7ad9)
 
 ---
 
