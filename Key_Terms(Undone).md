@@ -13,6 +13,7 @@
 - **Linear Regression**: Models relationships between dependent and independent variables using a straight line. Minimizes residuals using least squares to predict continuous values.
 - **Polynomial Regression:** Extends linear regression by fitting nonlinear relationships using polynomial terms. Captures curvatures in data, useful for complex patterns.
 - **Logistic Regression:** Estimates probabilities for binary classification problems using a sigmoid function, predicting discrete outcomes rather than continuous values.
+- **Standardized:** Refers to the process of rescaling data to have a mean of zero and a standard deviation of one, ensuring features are on the same scale.
 - **Slope**: The rate of change of the dependent variable per unit increase in the independent variable in a linear equation.  
 - **Dependent Variable (Y)**: The outcome variable that the model aims to predict based on input features.  
 - **Independent Variables (X)**: The predictor variables used in a model to estimate the dependent variable.  
