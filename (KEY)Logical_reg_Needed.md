@@ -1,4 +1,4 @@
-### **From Linear Regression to Logistic Regression**  
+### **From Linear Regression to Logistic Regression**  [https://github.com/learn-co-curriculum/dsc-linear-to-logistic-regression]
 
 Linear regression is a fundamental technique for modeling relationships between continuous variables. However, when predicting categorical outcomes (e.g., whether an event occurs or not), linear regression is not suitable. Logistic regression addresses this by modeling probabilities instead of direct numerical outputs.
 
