@@ -1,61 +1,70 @@
 ## Important terms & defintions in ML (Still more to be put)
 
-### **Statistical Concepts**  
-- **Variance**: Measures the spread of data points in a dataset by calculating the average squared difference from the mean.  
-- **Parameter**: A numerical characteristic that defines a statistical model or distribution, such as a mean or regression coefficient.  
-- **Dimension**: The number of features or variables in a dataset or mathematical space, affecting the complexity of a model.
-- **Continuous Value:** A numerical value that can take any real number within a range, including decimals. Examples: height, temperature, weight, and time measurements.
-- **Discrete Value:** A numerical value that is countable, finite, and cannot be divided meaningfully. Examples: number of students, cars, books, and apples.
+Here is a categorized and ordered list of the provided concepts, based on their relevance to each category:
 
-### **Regression Analysis**  
-- **Regression**: A statistical technique used to model relationships between a dependent variable and one or more independent variables, predicting outcomes and identifying trends in data.
-- **Linear:** Refers to a relationship or function where changes in one variable correspond proportionally to changes in another.
-- **Linear Regression**: Models relationships between dependent and independent variables using a straight line. Minimizes residuals using least squares to predict continuous values.
-- **Polynomial Regression:** Extends linear regression by fitting nonlinear relationships using polynomial terms. Captures curvatures in data, useful for complex patterns.
-- **Logistic Regression:** Estimates probabilities for binary classification problems using a sigmoid function, predicting discrete outcomes rather than continuous values.
-- **Standardized:** Refers to the process of rescaling data to have a mean of zero and a standard deviation of one, ensuring features are on the same scale.
-- **Slope**: The rate of change of the dependent variable per unit increase in the independent variable in a linear equation.  
-- **Dependent Variable (Y)**: The outcome variable that the model aims to predict based on input features.  
-- **Independent Variables (X)**: The predictor variables used in a model to estimate the dependent variable.  
-- **Coefficients (β)**: Weights assigned to independent variables in regression, representing their influence on the dependent variable.  
-- **Intercept (β₀)**: The predicted value of the dependent variable when all independent variables are zero.  
-- **Dummy Variables**: Binary indicators (0 or 1) representing categorical data for regression or classification models.  
-- **One-Hot Encoding**: A transformation method that converts categorical variables into multiple binary columns, each representing a unique category.
-- **Binary Columns**: Columns in a dataset that contain only two possible values, typically 0 or 1. These columns represent categorical data in a binary format, often used for classification tasks.
-- **StandardScaler:** A preprocessing technique in machine learning that standardizes features by removing the mean and scaling to unit variance. It transforms data to have a mean of 0 and a standard deviation of 1.
-- **MinMaxScaler:** is a feature scaling technique that transforms data into a specified range, typically [0, 1], by subtracting the minimum value and dividing by the range. Can be useful if certain features are unfairly penalized due to large differences in scale.
-- **Cross Validation:** A model evaluation technique where the dataset is split into multiple subsets (folds). The model is trained on some folds and tested on the remaining fold(s), repeating the process to assess performance.
-- **K-fold Cross validation:** expands on the idea of training and test splits by splitting the entire dataset into K equal sections of data. 
-- **Training data:** Used to train the model. The model learns patterns, relationships, and parameters from this data.
-- **Test data:** Used to evaluate the model's performance after training. It helps assess how well the model generalizes to unseen data.
--  **Generalizes to unseen data:** It means the model performs well on new, previously unseen data that wasn't part of its training set.
--  **Scoring Argument:** refers to a parameter used to define how a model's performance is evaluated. It specifies the metric (e.g., accuracy, precision) used during model evaluation.
+### Statistical Concepts
+1. **Parameter**: A numerical characteristic that defines a statistical model or distribution, such as a mean or regression coefficient.
+2. **Variance**: Measures the spread of data points in a dataset by calculating the average squared difference from the mean.
+3. **Dimension**: The number of features or variables in a dataset or mathematical space, affecting the complexity of a model.
+4. **Continuous Value**: A numerical value that can take any real number within a range, including decimals. Examples: height, temperature, weight, and time measurements.
+5. **Discrete Value**: A numerical value that is countable, finite, and cannot be divided meaningfully. Examples: number of students, cars, books, and apples.
 
-### **Model Evaluation Metrics**  
-- **Adjusted R-Squared**: A refined version of R-Squared that adjusts for the number of predictors, preventing overestimation.  
-- **R-Squared**: A statistical measure that explains the proportion of variance in the dependent variable accounted for by independent variables.  
-- **Mean Absolute Error (MAE)**: The average absolute difference between predicted and actual values, measuring prediction accuracy.  
-- **Root Mean Squared Error (RMSE)**: The square root of the mean squared differences between predicted and actual values, penalizing larger errors.
-- **Mean Squared Error (MSE):** measures the average squared difference between predicted and actual values, reflecting the model's accuracy. Lower MSE indicates better model performance, with fewer errors in predictions.
-- **Validation Performance**: The accuracy or effectiveness of a model measured on unseen validation data.  
-- **Model Performance**: The overall effectiveness of a predictive model, evaluated using metrics like accuracy, MAE, and RMSE.
-- **Multicollinearity:** When independent variables in a regression model are highly correlated, making it hard to determine their individual effects and leading to unreliable coefficient estimates.
+---
 
-### **Machine Learning Concepts**  
-- **Regularization**: A technique that adds penalties to model complexity to prevent overfitting, such as L1 (Lasso) or L2 (Ridge).  
-- **Training Data**: The dataset used to train a machine learning model, allowing it to learn patterns and relationships.  
-- **Ridge**: A regression technique that applies L2 regularization, adding a penalty to large coefficients to prevent overfitting. We believe may all have some predictive power. Unlike Lasso, it reduces model complexity without eliminating features.
-- **Lasso:** A regularization method for linear regression that applies an L1 penalty, shrinking coefficients to zero and performing feature selection by excluding irrelevant variables, helping to prevent overfitting. Unlike Ridge, Lasso performs feature selection by setting some coefficients to zero, making it better for sparse models.
-- **Cost Function**: A mathematical function that quantifies the error of a model’s predictions, guiding optimization.  
-- **Error Loss Function**: A function that measures the discrepancy between predicted and actual values, helping to minimize prediction errors.
-- **OLS (Ordinary Least Squares):** A statistical method used in linear regression to estimate the relationship between variables by minimizing the sum of squared differences between observed and predicted values.
-- **Hyperparameter:** A parameter set before model training that controls the learning process, such as learning rate or number of layers in a neural network. It is not learned from data.
-- **Polynomial:** Refer to transformations of input features into higher-degree terms (e.g., squared, cubic) to capture non-linear relationships, enhancing model flexibility for complex patterns in data.
-- **Data Leakage**: Leads to overconfident estimates of model performance during the validation and testing phases.
-- **Pipeline**: A sequential workflow that automates data preprocessing, feature engineering, model training, and evaluation, ensuring reproducibility, efficiency, and avoiding data leakage by applying transformations consistently.
-- **Sparse Model**: A model where many feature coefficients are zero, meaning only a subset of features significantly contribute, improving interpretability and reducing computational complexity.
+### Regression Analysis
+1. **Regression**: A statistical technique used to model relationships between a dependent variable and one or more independent variables, predicting outcomes and identifying trends in data.
+2. **Linear Regression**: Models relationships between dependent and independent variables using a straight line. Minimizes residuals using least squares to predict continuous values.
+3. **Polynomial Regression**: Extends linear regression by fitting nonlinear relationships using polynomial terms. Captures curvatures in data, useful for complex patterns.
+4. **Logistic Regression**: Estimates probabilities for binary classification problems using a sigmoid function, predicting discrete outcomes rather than continuous values.
+5. **Linear**: Refers to a relationship or function where changes in one variable correspond proportionally to changes in another.
+6. **Standardized**: Refers to the process of rescaling data to have a mean of zero and a standard deviation of one, ensuring features are on the same scale.
+7. **Slope**: The rate of change of the dependent variable per unit increase in the independent variable in a linear equation.
+8. **Dependent Variable (Y)**: The outcome variable that the model aims to predict based on input features.
+9. **Independent Variables (X)**: The predictor variables used in a model to estimate the dependent variable.
+10. **Coefficients (β)**: Weights assigned to independent variables in regression, representing their influence on the dependent variable.
+11. **Intercept (β₀)**: The predicted value of the dependent variable when all independent variables are zero.
+12. **Dummy Variables**: Binary indicators (0 or 1) representing categorical data for regression or classification models.
+13. **One-Hot Encoding**: A transformation method that converts categorical variables into multiple binary columns, each representing a unique category.
+14. **Binary Columns**: Columns in a dataset that contain only two possible values, typically 0 or 1. These columns represent categorical data in a binary format, often used for classification tasks.
+15. **StandardScaler**: A preprocessing technique in machine learning that standardizes features by removing the mean and scaling to unit variance. It transforms data to have a mean of 0 and a standard deviation of 1.
+16. **MinMaxScaler**: A feature scaling technique that transforms data into a specified range, typically [0, 1], by subtracting the minimum value and dividing by the range.
 
-L1 metric is absolute magnitude of the weights 
+---
+
+### Model Evaluation Metrics
+1. **R-Squared**: A statistical measure that explains the proportion of variance in the dependent variable accounted for by independent variables.
+2. **Adjusted R-Squared**: A refined version of R-Squared that adjusts for the number of predictors, preventing overestimation.
+3. **Mean Absolute Error (MAE)**: The average absolute difference between predicted and actual values, measuring prediction accuracy.
+4. **Mean Squared Error (MSE)**: Measures the average squared difference between predicted and actual values, reflecting the model's accuracy. Lower MSE indicates better model performance, with fewer errors in predictions.
+5. **Root Mean Squared Error (RMSE)**: The square root of the mean squared differences between predicted and actual values, penalizing larger errors.
+6. **Validation Performance**: The accuracy or effectiveness of a model measured on unseen validation data.
+7. **Model Performance**: The overall effectiveness of a predictive model, evaluated using metrics like accuracy, MAE, and RMSE.
+8. **Multicollinearity**: When independent variables in a regression model are highly correlated, making it hard to determine their individual effects and leading to unreliable coefficient estimates.
+9. **Scoring Argument**: Refers to a parameter used to define how a model's performance is evaluated. It specifies the metric (e.g., accuracy, precision) used during model evaluation.
+
+---
+
+### Machine Learning Concepts
+1. **Training Data**: The dataset used to train a machine learning model, allowing it to learn patterns and relationships.
+2. **Test Data**: Used to evaluate the model's performance after training. It helps assess how well the model generalizes to unseen data.
+3. **Generalizes to Unseen Data**: It means the model performs well on new, previously unseen data that wasn't part of its training set.
+4. **Regularization**: A technique that adds penalties to model complexity to prevent overfitting, such as L1 (Lasso) or L2 (Ridge).
+5. **Ridge**: A regression technique that applies L2 regularization, adding a penalty to large coefficients to prevent overfitting. It reduces model complexity without eliminating features.
+6. **Lasso**: A regularization method for linear regression that applies an L1 penalty, shrinking coefficients to zero and performing feature selection by excluding irrelevant variables, helping to prevent overfitting.
+7. **Cost Function**: A mathematical function that quantifies the error of a model’s predictions, guiding optimization.
+8. **Error Loss Function**: A function that measures the discrepancy between predicted and actual values, helping to minimize prediction errors.
+9. **OLS (Ordinary Least Squares)**: A statistical method used in linear regression to estimate the relationship between variables by minimizing the sum of squared differences between observed and predicted values.
+10. **Hyperparameter**: A parameter set before model training that controls the learning process, such as learning rate or number of layers in a neural network.
+11. **Polynomial**: Refers to transformations of input features into higher-degree terms (e.g., squared, cubic) to capture non-linear relationships, enhancing model flexibility for complex patterns in data.
+12. **Pipeline**: A sequential workflow that automates data preprocessing, feature engineering, model training, and evaluation, ensuring reproducibility, efficiency, and avoiding data leakage by applying transformations consistently.
+13. **Data Leakage**: Leads to overconfident estimates of model performance during the validation and testing phases.
+14. **Sparse Model**: A model where many feature coefficients are zero, meaning only a subset of features significantly contribute, improving interpretability and reducing computational complexity.
+15. **K-fold Cross Validation**: Expands on the idea of training and test splits by splitting the entire dataset into K equal sections of data.
+16. **Cross Validation**: A model evaluation technique where the dataset is split into multiple subsets (folds). The model is trained on some folds and tested on the remaining fold(s), repeating the process to assess performance.
+
+---
+
+This structure categorizes each concept properly and organizes them in a logical order based on how they relate to each other in statistics, regression analysis, model evaluation, and machine learning.
 
 ### Questions & Comments heard(Undone)
 1. **When a Graph is too stiff**: It lacks flexibility, making it difficult to capture trends or respond to data changes.
