@@ -38,7 +38,32 @@ y_pred = model.predict(X_test)
 print("Accuracy: ", accuracy_score(y_test, y_pred))
 print("Confusion Matrix: \n", confusion_matrix(y_test, y_pred))
 ```
+Output:
+```
+(0.5,
+ array([[1, 0],
+        [1, 0]]),
+ <class 'statsmodels.iolib.summary.Summary'>
+ """
+                            Logit Regression Results                           
+ ==============================================================================
+ Dep. Variable:                 target   No. Observations:                    4
+ Model:                          Logit   Df Residuals:                        1
+ Method:                           MLE   Df Model:                            2
+ Date:                Tue, 25 Feb 2025   Pseudo R-squ.:                  0.1533
+ Time:                        21:30:27   Log-Likelihood:                -2.3475
+ converged:                       True   LL-Null:                       -2.7726
+ Covariance Type:            nonrobust   LLR p-value:                    0.6537
+ ==============================================================================
+                  coef    std err          z      P>|z|      [0.025      0.975]
+ ------------------------------------------------------------------------------
+ const         -2.2705      3.231     -0.703      0.482      -8.604       4.063
+ feature1      -0.9082      1.866     -0.487      0.626      -4.566       2.749
+ feature2       0.9082      1.324      0.686      0.493      -1.687       3.504
+ ==============================================================================
 
+```
+--- 
 ### 2. **Logistic Regression using `statsmodels`**:
 
 ```python
@@ -81,6 +106,25 @@ y_pred = [1 if prob > 0.5 else 0 for prob in y_pred_prob]
 # Evaluate the model
 print("Accuracy: ", accuracy_score(y_test, y_pred))
 print("Confusion Matrix: \n", confusion_matrix(y_test, y_pred))
+```
+Output:
+```
+                          Logit Regression Results                           
+==============================================================================
+Dep. Variable:                 target   No. Observations:                    4
+Model:                          Logit   Df Residuals:                        1
+Method:                           MLE   Df Model:                            2
+Date:                Tue, 25 Feb 2025   Pseudo R-squ.:                  0.1533
+Time:                        21:30:27   Log-Likelihood:                -2.3475
+converged:                       True   LL-Null:                       -2.7726
+Covariance Type:            nonrobust   LLR p-value:                    0.6537
+==============================================================================
+                  coef    std err          z      P>|z|      [0.025      0.975]
+------------------------------------------------------------------------------
+const         -2.2705      3.231     -0.703      0.482      -8.604       4.063
+feature1      -0.9082      1.866     -0.487      0.626      -4.566       2.749
+feature2       0.9082      1.324      0.686      0.493      -1.687       3.504
+==============================================================================
 ```
 
 ### Key Differences:
