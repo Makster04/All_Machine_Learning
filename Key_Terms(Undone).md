@@ -97,10 +97,10 @@ The decision boundary will be overly simplistic, possibly linear, with poor fitt
 ---
 
 ### Speaking of Graphs
-- **High Bias, Low Weight**: The decision boundary will be overly simplistic, possibly linear, with poor fitting to the data. It will have low flexibility and underfit, resulting in poor performance.
+- **High Bias, Low Weight**: The decision boundary will be overly simplistic, possibly linear, with poor fitting to the data. It will have low flexibility and underfit, resulting in poor performance. Probabilities would be poor since the model is too simplistic.
 
-- **Low Bias, High Weight**: The decision boundary will be complex, closely fitting the data. However, high weights may cause overfitting, resulting in a sharp boundary that captures noise, leading to high variance.
+- **Low Bias, High Weight**: The decision boundary will be complex, closely fitting the data. However, high weights may cause overfitting, resulting in a sharp boundary that captures noise, leading to high variance. Probabilities could be misleading because the model may overfit.
 
-- **High Bias, High Weight**: The decision boundary might be complex but still not fit the data well. It could be highly curved, but the model's generalization is poor due to high bias.
+- **High Bias, High Weight**: The decision boundary might be complex but still not fit the data well. It could be highly curved, but the model's generalization is poor due to high bias. Probabilities would be inconsistent and inaccurate, as the model struggles to find the correct patterns.
 
-- **Low Bias, Low Weight**: The decision boundary will be moderately flexible, capturing data patterns without overfitting noise. The model should generalize well but may lack sufficient complexity for all patterns.
+- **Low Bias, Low Weight**: The decision boundary will be moderately flexible, capturing data patterns without overfitting noise. The model should generalize well but may lack sufficient complexity for all patterns. Probabilities would be relatively reliable and well-calibrated.
