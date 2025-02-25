@@ -8,6 +8,8 @@
 - **Boundary**: A dividing line or surface in feature space that separates different categories in a classification model.  
 - **Decision Boundary**: The specific boundary learned by a classification algorithm that separates different classes in the dataset, guiding predictions.  
 - **Optimization:** No closed form solution for w and b minmizing cost function
+- **Binary Model:** A machine learning model that predicts one of two possible outcomes (e.g., 0 or 1) in classification tasks like spam detection or medical diagnosis.
+- **Loss Function:** A mathematical function that quantifies the difference between predicted and actual values, guiding model optimization by minimizing errors during training.
 
 ### Statistical Concepts
 1. **Parameter**: A numerical characteristic that defines a statistical model or distribution, such as a mean or regression coefficient.
