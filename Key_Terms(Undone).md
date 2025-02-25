@@ -9,6 +9,7 @@
 
 ### **Regression Analysis**  
 - **Regression**: A statistical technique used to model relationships between a dependent variable and one or more independent variables, predicting outcomes and identifying trends in data.
+- **Linear:** Refers to a relationship or function where changes in one variable correspond proportionally to changes in another.
 - **Linear Regression**: Models relationships between dependent and independent variables using a straight line. Minimizes residuals using least squares to predict continuous values.
 - **Polynomial Regression:** Extends linear regression by fitting nonlinear relationships using polynomial terms. Captures curvatures in data, useful for complex patterns.
 - **Logistic Regression:** Estimates probabilities for binary classification problems using a sigmoid function, predicting discrete outcomes rather than continuous values.
