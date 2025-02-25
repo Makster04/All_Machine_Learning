@@ -28,6 +28,8 @@ Here is a categorized and ordered list of the provided concepts, based on their 
 14. **Binary Columns**: Columns in a dataset that contain only two possible values, typically 0 or 1. These columns represent categorical data in a binary format, often used for classification tasks.
 15. **StandardScaler**: A preprocessing technique in machine learning that standardizes features by removing the mean and scaling to unit variance. It transforms data to have a mean of 0 and a standard deviation of 1.
 16. **MinMaxScaler**: A feature scaling technique that transforms data into a specified range, typically [0, 1], by subtracting the minimum value and dividing by the range.
+17. **Overfitting**: A model becomes too complex, capturing noise and irrelevant patterns, leading to high training accuracy but poor generalization on new data.
+18. **Underfitting**: A model is too simple, failing to capture underlying patterns, resulting in poor performance on both training and unseen data.
 
 ---
 
