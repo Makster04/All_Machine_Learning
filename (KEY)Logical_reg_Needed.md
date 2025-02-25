@@ -6,9 +6,9 @@ Linear regression is a fundamental technique for modeling relationships between 
 
 ## **Why Do We Need Logistic Regression?**  
 
-Linear regression assumes the dependent variable (\( Y \)) is continuous, but in many real-world problems, outcomes are binary (e.g., success/failure, spam/non-spam, disease/no disease). Applying linear regression directly to binary classification leads to:  
+Linear regression assumes the dependent variable $$(\( Y \))$$ is continuous, but in many real-world problems, outcomes are binary (e.g., success/failure, spam/non-spam, disease/no disease). Applying linear regression directly to binary classification leads to:  
 
-1. **Unbounded Predictions**: Linear regression can predict values outside the range \([0,1]\), making probability interpretation meaningless.
+1. **Unbounded Predictions**: Linear regression can predict values outside the range $$\([0,1]\)$$, making probability interpretation meaningless.
 2. **Violation of Homoscedasticity**: The variance of errors in binary classification is not constant, contradicting linear regression assumptions.
 3. **Inefficient Decision Boundaries**: A straight-line decision boundary may not capture the actual data distribution well.
 
@@ -21,27 +21,27 @@ Logistic regression overcomes these issues by using the **sigmoid function** to 
 ### **1. Sigmoid Function (Logistic Function)**
 The sigmoid function maps any real number to a range between 0 and 1:
 
-\[
+$$\[
 \sigma(z) = \frac{1}{1 + e^{-z}}
-\]
+\]$$
 
-where \( z = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \dots + \beta_n x_n \) (similar to linear regression). The output represents the probability of the positive class (e.g., probability of an event occurring).
+where $$\( z = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \dots + \beta_n x_n \)$$ (similar to linear regression). The output represents the probability of the positive class (e.g., probability of an event occurring).
 
 ---
 
 ### **2. Logistic Regression Model**
-\[
+$$\[
 P(Y = 1 | X) = \frac{1}{1 + e^{-(\beta_0 + \beta_1 x_1 + \dots + \beta_n x_n)}}
-\]
+\]$$
 
 where:  
-- \( P(Y = 1 | X) \) is the probability that the outcome is **1** given inputs \( X \).  
-- \( \beta_0 \) (intercept) and \( \beta_i \) (coefficients) are estimated using **Maximum Likelihood Estimation (MLE)** instead of **Least Squares** (used in linear regression).  
+- $$\( P(Y = 1 | X) \)$$ is the probability that the outcome is **1** given inputs \( X \).  
+- $$\( \beta_0 \)$$ (intercept) and $$\( \beta_i \)$$ (coefficients) are estimated using **Maximum Likelihood Estimation (MLE)** instead of **Least Squares** (used in linear regression).  
 - The **log-odds (logit transformation)** is defined as:
 
-\[
+$$\[
 \log \left( \frac{P}{1 - P} \right) = \beta_0 + \beta_1 x_1 + \dots + \beta_n x_n
-\]
+\]$$
 
 This transformation ensures a **linear relationship** between predictors and log-odds instead of probabilities.
 
@@ -49,22 +49,22 @@ This transformation ensures a **linear relationship** between predictors and log
 
 ### **3. Interpreting Logistic Regression Parameters**  
 
-- **\( \beta_0 \) (Intercept)**: The log-odds of the event occurring when all \( X \)'s are 0.
-- **\( \beta_i \) (Coefficients)**: Represents how a unit change in \( x_i \) affects the log-odds of \( Y \).
-- **Odds Ratio \( e^{\beta_i} \)**: Measures how a unit increase in \( x_i \) affects the odds of \( Y = 1 \).  
-  - \( e^{\beta_i} > 1 \): Increases the odds of the event.
-  - \( e^{\beta_i} < 1 \): Decreases the odds of the event.
+- **$$\( \beta_0 \)$$ (Intercept)**: The log-odds of the event occurring when all $$\( X \)$$'s are 0.
+- **$$\( \beta_i \)$$ (Coefficients)**: Represents how a unit change in $$\( x_i \)$$ affects the log-odds of $$\( Y \)$$.
+- **Odds Ratio \( e^{\beta_i} \)**: Measures how a unit increase in $$\( x_i \)$$ affects the odds of $$\( Y = 1 \)$$.  
+  - $$\( e^{\beta_i} > 1 \)$$: Increases the odds of the event.
+  - $$\( e^{\beta_i} < 1 \)$$: Decreases the odds of the event.
 
 ---
 
 ### **4. Cost Function & Optimization**
 Unlike linear regression (which uses **Mean Squared Error**), logistic regression uses **Log-Loss (Binary Cross-Entropy)**:
 
-\[
+$$\[
 \text{Loss} = -\frac{1}{N} \sum_{i=1}^{N} \left[ y_i \log (\hat{y_i}) + (1 - y_i) \log (1 - \hat{y_i}) \right]
-\]
+\]$$
 
-Since the function is non-convex with respect to \( \beta \), we optimize using **Gradient Descent**.
+Since the function is non-convex with respect to $$\( \beta \)$$, we optimize using **Gradient Descent**.
 
 ---
 
