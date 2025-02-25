@@ -1,9 +1,13 @@
 ## Important terms & defintions in ML (Still more to be put)
 
-Here is a categorized and ordered list of the provided concepts, based on their relevance to each category:
-Log-Loss Function
-Binary Cross-entropy
-Optimization: No closed form solution for w and b minmizing cost function
+### Other terms or definitions (Yet to be placed in a category):
+- **Log-Loss Function:** Log-Loss function (Logarithmic Loss) measures a classification model’s performance by quantifying the difference between predicted probabilities and actual binary labels.
+- **Binary Cross-Entropy (BCE)** is a loss function measuring the difference between predicted and actual binary labels, used in classification tasks to optimize model accuracy via logarithmic loss.
+- **Optimization**: The process of adjusting model parameters to minimize a loss function and improve performance, often using algorithms like Gradient Descent.  
+- **Classification**: A supervised learning task where a model categorizes input data into predefined classes, such as spam detection or image recognition.  
+- **Boundary**: A dividing line or surface in feature space that separates different categories in a classification model.  
+- **Decision Boundary**: The specific boundary learned by a classification algorithm that separates different classes in the dataset, guiding predictions.  
+- **Optimization:** No closed form solution for w and b minmizing cost function
 
 ### Statistical Concepts
 1. **Parameter**: A numerical characteristic that defines a statistical model or distribution, such as a mean or regression coefficient.
