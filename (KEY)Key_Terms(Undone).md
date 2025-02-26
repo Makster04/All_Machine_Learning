@@ -10,7 +10,7 @@ Class Balance will be a big part
 
 Metric:
 Precision (TP/(TP+FP))
-Recall (TP/(TP+FN)) Total number of positive examples in the data set
+Recall (TP/(TP+FN)) Total number of positive examples in the data set (When false negatives are a lot worse)
 Harmonic Mean (2(Precison+Recall)/2(TP+FP+FN))
 
 Here are simplified explanations of each term:  
