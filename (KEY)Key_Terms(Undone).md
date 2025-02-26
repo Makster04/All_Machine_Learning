@@ -1,5 +1,17 @@
 ## Important terms & defintions in ML (Still more to be put)
 
+True Negative (2493)
+False Negative (3)
+True Positive (0)
+False Positive (4)
+
+Not everytime accuracy is doing well (How many examples you clarify correctly), doesnt mean the model will always be doing weel (Massive classify
+Class Balance will be a big part
+
+Metric:
+Precision (TP/(TP+FP))
+
+
 ### Other terms or definitions (Yet to be placed in a category):
 - **Log-Loss Function:** Log-Loss function (Logarithmic Loss) measures a classification model’s performance by quantifying the difference between predicted probabilities and actual binary labels.
 - **Training**: The process where a machine learning model learns patterns from labeled data by adjusting its parameters to minimize errors using optimization algorithms.  
