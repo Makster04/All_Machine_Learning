@@ -1,7 +1,3 @@
-### **Gradient Descent Review: Explanation, Terms, and Coding**  
-
-#### **Explanation**  
-Gradient Descent is an optimization algorithm used to minimize a function by iteratively moving in the direction of the steepest descent, as defined by the negative gradient. It is widely used in machine learning and deep learning to optimize cost functions, particularly in training models such as linear regression, logistic regression, and neural networks.  
 
 #### **Key Terms & Definitions**  
 
