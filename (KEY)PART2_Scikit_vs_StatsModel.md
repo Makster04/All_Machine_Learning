@@ -1,3 +1,166 @@
+
+# Fitting a Logistic Regression Model - Lab
+
+## Introduction
+
+In the last lesson you were given a broad overview of logistic regression. This included an introduction to two separate packages for creating logistic regression models. In this lab, you'll be investigating fitting logistic regressions with `statsmodels`. For your first foray into logistic regression, you are going to attempt to build a model that classifies whether an individual survived the [Titanic](https://www.kaggle.com/c/titanic/data) shipwreck or not (yes, it's a bit morbid).
+
+
+## Objectives
+
+In this lab you will: 
+
+* Implement logistic regression with `statsmodels` 
+* Interpret the statistical results associated with model parameters
+
+## Import the data
+
+Import the data stored in the file `'titanic.csv'` and print the first five rows of the DataFrame to check its contents. 
+
+
+```python
+import pandas as pd
+
+# Load the Titanic dataset
+df = pd.read_csv('titanic.csv')
+
+df
+
+```
+
+## Define independent and target variables
+
+Your target variable is in the column `'Survived'`. A `0` indicates that the passenger didn't survive the shipwreck. Print the total number of people who didn't survive the shipwreck. How many people survived?
+
+
+```python
+# Total number of people who survived/didn't survive
+Total_Survived= df['Survived'].value_counts()
+Total_Survived
+```
+Output:
+```
+0    549
+1    342
+Name: Survived, dtype: int64
+```
+
+Only consider the columns specified in `relevant_columns` when building your model. The next step is to create dummy variables from categorical variables. Remember to drop the first level for each categorical column and make sure all the values are of type `float`: 
+
+
+```python
+# Create dummy variables
+relevant_columns = ['Pclass', 'Age', 'SibSp', 'Fare', 'Sex', 'Embarked', 'Survived']
+df_relevent = df[relevant_columns]
+
+dummy_dataframe = pd.get_dummies(df_relevent, drop_first=True)
+
+dummy_dataframe = dummy_dataframe.astype(float)
+
+print(dummy_dataframe.shape)
+```
+Output:
+```
+(891, 8)
+```
+
+Did you notice above that the DataFrame contains missing values? To keep things simple, simply delete all rows with missing values. 
+
+> NOTE: You can use the [`.dropna()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.dropna.html) method to do this. 
+
+
+```python
+# Drop missing rows
+dummy_dataframe = dummy_dataframe.dropna()
+dummy_dataframe.shape
+```
+Output:
+```
+(714, 8)
+```
+
+Finally, assign the independent variables to `X` and the target variable to `y`: 
+
+
+```python
+# Split the data into X and y
+y = dummy_dataframe['Survived']
+X = dummy_dataframe.drop(columns=['Survived'])
+```
+
+## Fit the model
+
+Now with everything in place, you can build a logistic regression model using `statsmodels` (make sure you create an intercept term as we showed in the previous lesson).  
+
+> Warning: Did you receive an error of the form "LinAlgError: Singular matrix"? This means that `statsmodels` was unable to fit the model due to certain linear algebra computational problems. Specifically, the matrix was not invertible due to not being full rank. In other words, there was a lot of redundant, superfluous data. Try removing some features from the model and running it again.
+
+
+```python
+# Build a logistic regression model using statsmodels
+import statsmodels.api as sm
+import pandas as pd
+from sklearn.model_selection import train_test_split
+
+X = sm.add_constant(X)
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
+
+
+model = sm.Logit(y_train, X_train)
+result = model.fit()
+
+print(result.summary())
+```
+Output:
+```
+Optimization terminated successfully.
+         Current function value: 0.427312
+         Iterations 6
+                           Logit Regression Results                           
+==============================================================================
+Dep. Variable:               Survived   No. Observations:                  499
+Model:                          Logit   Df Residuals:                      491
+Method:                           MLE   Df Model:                            7
+Date:                Tue, 25 Feb 2025   Pseudo R-squ.:                  0.3661
+Time:                        16:45:37   Log-Likelihood:                -213.23
+converged:                       True   LL-Null:                       -336.39
+Covariance Type:            nonrobust   LLR p-value:                 1.676e-49
+==============================================================================
+                 coef    std err          z      P>|z|      [0.025      0.975]
+------------------------------------------------------------------------------
+const          6.5020      0.834      7.800      0.000       4.868       8.136
+Pclass        -1.4192      0.216     -6.555      0.000      -1.843      -0.995
+Age           -0.0484      0.010     -4.845      0.000      -0.068      -0.029
+SibSp         -0.3306      0.162     -2.044      0.041      -0.648      -0.014
+Fare          -0.0033      0.004     -0.892      0.373      -0.011       0.004
+Sex_male      -2.7855      0.267    -10.417      0.000      -3.310      -2.261
+Embarked_Q    -0.3045      0.719     -0.424      0.672      -1.714       1.105
+Embarked_S    -0.5005      0.329     -1.523      0.128      -1.144       0.143
+==============================================================================
+```
+
+## Analyze results
+
+Generate the summary table for your model. Then, comment on the p-values associated with the various features you chose.
+
+
+```
+## Summary table
+
+# Highly significant variables: Pclass, Age, Sex_male (p-value < 0.05)
+# Not significant variables: Fare, Embarked_Q, and Embarked_S (p-value > 0.05)
+# Marginally significant: SibSp (p-value = 0.041)
+
+## The model suggests that factors like class, age, and gender have a notable impact on survival, while others like fare and embarkation port do not contribute significantly.
+
+```
+
+## Summary 
+
+Well done! In this lab, you practiced using `statsmodels` to build a logistic regression model. You then interpreted the results, building upon your previous stats knowledge, similar to linear regression. Continue on to take a look at building logistic regression models in Scikit-learn!
+
+---
+
 # Logistic Regression in scikit-learn - Lab
 
 ## Introduction 
