@@ -10,7 +10,8 @@ Class Balance will be a big part
 
 Metric:
 Precision (TP/(TP+FP))
-
+Recall (TP/(TP+FN)) Total number of positive examples in the data set
+Harmonic Mean (2(Precison+Recall)/2(TP+FP+FN))
 
 ### Other terms or definitions (Yet to be placed in a category):
 - **Log-Loss Function:** Log-Loss function (Logarithmic Loss) measures a classification model’s performance by quantifying the difference between predicted probabilities and actual binary labels.
