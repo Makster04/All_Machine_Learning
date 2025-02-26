@@ -74,6 +74,7 @@
 - **Discrete Value**: A countable number, like the number of apples in a basket.  
 - **Multicollinearity**: When inputs are too similar, making it hard to tell their effects apart.
 - **Bias-variance trade-off**: in machine learning refers to balancing model simplicity (bias) and complexity (variance) to minimize error and improve generalization to unseen data.
+- **Generalization**: in machine learning is the model's ability to perform well on unseen data by recognizing underlying patterns, not memorizing.
 
 ---
 
