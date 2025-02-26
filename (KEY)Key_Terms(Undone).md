@@ -31,7 +31,7 @@
 ---
 
 ### **Classification & Decision Boundaries**  
-- **Classification**: Sorting data into groups, like detecting spam emails or recognizing faces in images.  
+- **Classification**: Task of categorizing data into predefined classes or labels based on input features, such as spam detection or image recognition. 
 - **Boundary**: A line or region that separates different categories in a classification model.  
 - **Decision Boundary**: The exact boundary a model creates to separate different classes in the data.  
 - **Binary Model**: A model that predicts only two possible outcomes, like "yes" or "no."  
