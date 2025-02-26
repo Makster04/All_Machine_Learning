@@ -72,7 +72,8 @@
 - **Dimension**: The number of features or variables in a dataset. More dimensions mean more complexity.  
 - **Continuous Value**: A number that can take any value, like height or temperature.  
 - **Discrete Value**: A countable number, like the number of apples in a basket.  
-- **Multicollinearity**: When inputs are too similar, making it hard to tell their effects apart.  
+- **Multicollinearity**: When inputs are too similar, making it hard to tell their effects apart.
+- **Bias-variance trade-off**: in machine learning refers to balancing model simplicity (bias) and complexity (variance) to minimize error and improve generalization to unseen data.
 
 ---
 
@@ -189,6 +190,8 @@ In logistic regression, it minimizes log loss (cross-entropy loss) to improve pr
 ---
 
 ### Speaking of Graphs
+
+- **C** typically controls the trade-off between bias and variance in models. A high C value makes the model more complex (lower bias, higher variance), while a low C value makes it simpler (higher bias, lower variance).
 - **High Bias, Low Weight**: The decision boundary will be overly simplistic, possibly linear, with poor fitting to the data. It will have low flexibility and underfit, resulting in poor performance. Probabilities would be poor since the model is too simplistic.
 
 - **Low Bias, High Weight**: The decision boundary will be complex, closely fitting the data. However, high weights may cause overfitting, resulting in a sharp boundary that captures noise, leading to high variance. Probabilities could be misleading because the model may overfit.
