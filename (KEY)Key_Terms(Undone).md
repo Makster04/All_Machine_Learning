@@ -161,10 +161,17 @@ This should make the definitions easier to grasp! Let me know if you want any fu
 
 12. **L2 Regularized the Polynomial**: Regularizing the polynomial reduces overfitting, leading to improved model performance and better generalization on unseen data.
 
-13. **Much better test performance than unregularized polynomial**: L2 regularization helps the polynomial model avoid overfitting, leading to more accurate predictions on test data.
+14. **Much better test performance than unregularized polynomial**: L2 regularization helps the polynomial model avoid overfitting, leading to more accurate predictions on test data.
     
-13. **High Bias, Low Weight**:  
-The decision boundary will be overly simplistic, possibly linear, with poor fitting to the data. It will have low flexibility and underfit, resulting in poor performance.
+15. **Y-Score is the probability of the Positive Class**: It represents how confident the model is that a given instance belongs to the positive class, typically ranging from 0 to 1.
+
+16. **Not every time accuracy is doing well (How many examples you classify correctly), doesn't mean the model will always be doing well (Massive misclassification)**: Accuracy can be misleading in imbalanced datasets, as a model may predict the majority class most of the time while failing on critical minority cases.  
+
+17. **Class balance will be a big part**: If classes are imbalanced, metrics like accuracy can be deceptive, requiring alternative evaluation methods such as precision, recall, or F1-score.  
+
+18. **Threshold, there are far more probable but less equal**: Adjusting the decision threshold can change the balance between precision and recall, affecting the trade-off between false positives and false negatives.  
+
+19. **Metric**: Choosing the right metric (e.g., precision, recall, F1-score, AUC-ROC) depends on the problem context, especially when dealing with imbalanced classes or varying misclassification costs.  
 ---
 
 ### Speaking of Graphs
