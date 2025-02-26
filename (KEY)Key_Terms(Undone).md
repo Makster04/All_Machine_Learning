@@ -1,17 +1,18 @@
 ## Important terms & defintions in ML (Still more to be put)
 
-True Negative (2493)
-False Negative (3)
-True Positive (0)
-False Positive (4)
+
+
+
+
+
+
+- Y-Score is the probability of the Possitviie Class
 
 Not everytime accuracy is doing well (How many examples you clarify correctly), doesnt mean the model will always be doing weel (Massive classify
 Class Balance will be a big part
-
+Threshold, there are far more probable but less wqual
 Metric:
-Precision (TP/(TP+FP))
-Recall (TP/(TP+FN)) Total number of positive examples in the data set (When false negatives are a lot worse)
-Harmonic Mean (2(Precison+Recall)/2(TP+FP+FN))
+
 
 Here are simplified explanations of each term:  
 
@@ -100,6 +101,40 @@ This should make the definitions easier to grasp! Let me know if you want any fu
 4. **Embedded Methods**: Feature selection integrated into model training, where algorithms like decision trees or LASSO perform feature selection during the learning process, balancing performance and model complexity efficiently.
 ---
 
+### Evaluation Method
+- **True Positive (TP):** A correctly predicted positive instance where the model detects a real positive case.
+  
+- **True Negative (TN):** A correctly predicted negative instance where the model accurately identifies a non-positive case.
+  
+- **False Positive (FP):** An incorrect prediction where the model mistakenly classifies a negative instance as positive.
+  
+- **False Negative (FN):** An incorrect prediction where the model fails to detect a true positive case.
+  
+- **Precision (TP/(TP+FP)):** Measures how many predicted positive cases are actually correct. High precision means fewer false positives, making it crucial in applications like fraud detection.
+  
+- **Recall (TP/(TP+FN)):** Measures how many actual positive cases are correctly identified. High recall is important when missing positives is costly, like in medical diagnosis.
+  
+- **Harmonic Mean (2(Precision + Recall)/2(TP+FP+FN)):** A metric balancing precision and recall. It gives more weight to lower values, preventing extreme bias toward one metric over another in classification tasks.
+  
+- **F-Score:** A weighted harmonic mean of precision and recall. It depends on the model’s threshold, structure, and data, ensuring balanced evaluation based on application needs.
+
+1. **High Recall, Low Precision**  
+   - The model correctly identifies most positive cases (high recall) but also misclassifies many negative cases as positive (low precision).  
+   - This is common in applications where missing a true positive is costly, such as medical diagnosis (e.g., detecting cancer) or fraud detection. The model catches most actual cases but has many false alarms.
+
+2. **Low Recall, High Precision**  
+   - The model is very strict in labeling something as positive, meaning that when it does, it's usually correct (high precision). However, it misses many true positives (low recall).  
+   - This is useful when false positives are costly, such as in spam detection—only very certain emails are classified as spam, but many spam emails might be missed.
+
+3. **High Recall, High Precision**  
+   - The ideal scenario: the model correctly identifies most positive cases (high recall) and does so with few false positives (high precision).  
+   - This indicates a well-performing model that effectively balances both metrics, though achieving this in practice is challenging.
+
+4. **Low Recall, Low Precision**  
+   - The worst-case scenario: the model misses many true positives (low recall) and also makes many incorrect positive predictions (low precision).  
+   - This suggests a poorly trained model, possibly due to poor feature selection, insufficient training data, or improper model tuning.
+
+---
 
 ### Questions & Comments heard(Undone)
 1. **When a Graph is too stiff**: It lacks flexibility, making it difficult to capture trends or respond to data changes.
@@ -127,7 +162,8 @@ This should make the definitions easier to grasp! Let me know if you want any fu
 12. **L2 Regularized the Polynomial**: Regularizing the polynomial reduces overfitting, leading to improved model performance and better generalization on unseen data.
 
 13. **Much better test performance than unregularized polynomial**: L2 regularization helps the polynomial model avoid overfitting, leading to more accurate predictions on test data.
-14. **High Bias, Low Weight**:  
+    
+13. **High Bias, Low Weight**:  
 The decision boundary will be overly simplistic, possibly linear, with poor fitting to the data. It will have low flexibility and underfit, resulting in poor performance.
 ---
 
