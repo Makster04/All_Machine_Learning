@@ -1,59 +1,80 @@
 ## Important terms & defintions in ML (Still more to be put)
+---
 
-
-
-
-
-
-
-- Y-Score is the probability of the Possitviie Class
-
-Not everytime accuracy is doing well (How many examples you clarify correctly), doesnt mean the model will always be doing weel (Massive classify
-Class Balance will be a big part
-Threshold, there are far more probable but less wqual
-Metric:
-
-
-Here are simplified explanations of each term:  
-
-### **General Terms**  
+### **Loss Functions & Optimization**  
 - **Log-Loss Function**: A way to measure how well a classification model predicts probabilities. Lower values mean better accuracy.  
+- **Binary Cross-Entropy (BCE)**: A method for evaluating classification models by measuring how close predicted probabilities are to actual results.  
+- **Loss Function**: A formula that calculates how far predictions are from actual values, helping guide model improvement.  
+- **Cost Function**: A formula that measures a model’s error, helping guide improvements.  
+- **Error Loss Function**: A function that calculates how far predictions are from actual results.  
+
+---
+
+### **Model Training & Evaluation**  
 - **Training**: The phase where a machine learns from data by adjusting its internal settings to minimize mistakes.  
 - **Testing**: Checking how well a trained model performs on new, unseen data.  
-- **Binary Cross-Entropy (BCE)**: A method for evaluating classification models by measuring how close predicted probabilities are to actual results.  
-- **Optimization**: The process of fine-tuning a model’s settings to reduce errors and improve performance.  
+- **Training Data**: The dataset used to teach a model.  
+- **Test Data**: A separate dataset used to check a model’s performance.  
+- **Validation Performance**: How well a model works on a separate dataset used for fine-tuning.  
+- **Model Performance**: The overall effectiveness of a model.  
+- **Generalizes to Unseen Data**: The model can correctly predict outcomes for new data.  
+- **Overfitting**: When a model memorizes the training data instead of learning patterns, making it bad at new data.  
+- **Underfitting**: When a model is too simple and fails to find patterns in the data.  
+- **Regularization**: A technique to prevent overfitting by adding penalties for complexity.  
+- **Ridge**: A method that reduces large weights in regression models to prevent overfitting.  
+- **Lasso**: A method that removes less important inputs by setting some weights to zero.  
+- **Hyperparameter**: A setting chosen before training, like how fast a model learns.  
+- **K-fold Cross Validation**: A method that splits data into multiple parts to test the model multiple times.  
+- **Cross Validation**: A way to evaluate a model by testing it on different subsets of data.  
+- **Scoring Argument**: A setting that defines how a model’s performance is measured, like accuracy or precision.  
+
+---
+
+### **Classification & Decision Boundaries**  
 - **Classification**: Sorting data into groups, like detecting spam emails or recognizing faces in images.  
 - **Boundary**: A line or region that separates different categories in a classification model.  
 - **Decision Boundary**: The exact boundary a model creates to separate different classes in the data.  
 - **Binary Model**: A model that predicts only two possible outcomes, like "yes" or "no."  
-- **Loss Function**: A formula that calculates how far predictions are from actual values, helping guide model improvement.  
+- **Threshold**: The cutoff point where a model decides between classes based on probability, affecting errors like false positives and false negatives.  
 
-### **Statistical Concepts**  
+---
+
+### **Regression & Statistical Modeling**  
+- **Regression**: A method to find relationships between variables and predict future values.  
+- **Linear Regression**: A way to predict an outcome using a straight-line relationship between variables.  
+- **Polynomial Regression**: Similar to linear regression but allows curves instead of straight lines.  
+- **Logistic Regression**: A model that predicts probabilities for binary classification problems.  
+- **OLS (Ordinary Least Squares)**: A method in regression that finds the best-fitting line by minimizing squared errors.  
+- **Linear**: A relationship where changes in one variable consistently affect another.  
+- **Slope**: The rate at which one variable changes in response to another.  
+- **Intercept (β₀)**: The starting value when all inputs are zero.  
+- **Coefficients (β)**: The values that determine how much each input affects the outcome.  
+- **Dependent Variable (Y)**: The outcome being predicted.  
+- **Independent Variables (X)**: The inputs used to predict the outcome.  
+- **Polynomial**: A transformation that allows models to capture more complex patterns.  
+- **Sparse Model**: A model that ignores many features by setting their weights to zero.  
+
+---
+
+### **Feature Scaling & Encoding**  
+- **Standardized**: Adjusting data so it has a mean of zero and a standard deviation of one.  
+- **StandardScaler**: A tool that adjusts data so different features are on the same scale.  
+- **MinMaxScaler**: A method that scales data between 0 and 1.  
+- **Dummy Variables**: A way to represent categories using numbers (e.g., "Male" = 0, "Female" = 1).  
+- **One-Hot Encoding**: Turning categories into separate binary columns (e.g., "Red," "Blue," "Green" into three separate columns).  
+- **Binary Columns**: Data columns that contain only two values, like 0 and 1.  
+
+---
+
+### **Statistical Concepts & Data Properties**  
 - **Parameter**: A fixed number in a model, like an average or weight in an equation.  
 - **Variance**: A measure of how spread out data points are. Higher variance means more variability.  
 - **Dimension**: The number of features or variables in a dataset. More dimensions mean more complexity.  
 - **Continuous Value**: A number that can take any value, like height or temperature.  
 - **Discrete Value**: A countable number, like the number of apples in a basket.  
+- **Multicollinearity**: When inputs are too similar, making it hard to tell their effects apart.  
 
-### **Regression Analysis**  
-- **Regression**: A method to find relationships between variables and predict future values.  
-- **Linear Regression**: A way to predict an outcome using a straight-line relationship between variables.  
-- **Polynomial Regression**: Similar to linear regression but allows curves instead of straight lines.  
-- **Logistic Regression**: A model that predicts probabilities for binary classification problems.  
-- **Linear**: A relationship where changes in one variable consistently affect another.  
-- **Standardized**: Adjusting data so it has a mean of zero and a standard deviation of one.  
-- **Slope**: The rate at which one variable changes in response to another.  
-- **Dependent Variable (Y)**: The outcome being predicted.  
-- **Independent Variables (X)**: The inputs used to predict the outcome.  
-- **Coefficients (β)**: The values that determine how much each input affects the outcome.  
-- **Intercept (β₀)**: The starting value when all inputs are zero.  
-- **Dummy Variables**: A way to represent categories using numbers (e.g., "Male" = 0, "Female" = 1).  
-- **One-Hot Encoding**: Turning categories into separate binary columns (e.g., "Red," "Blue," "Green" into three separate columns).  
-- **Binary Columns**: Data columns that contain only two values, like 0 and 1.  
-- **StandardScaler**: A tool that adjusts data so different features are on the same scale.  
-- **MinMaxScaler**: A method that scales data between 0 and 1.  
-- **Overfitting**: When a model memorizes the training data instead of learning patterns, making it bad at new data.  
-- **Underfitting**: When a model is too simple and fails to find patterns in the data.  
+---
 
 ### **Model Evaluation Metrics**  
 - **R-Squared**: Measures how well a model explains the variation in data.  
@@ -61,31 +82,15 @@ Here are simplified explanations of each term:
 - **Mean Absolute Error (MAE)**: The average difference between predictions and actual values.  
 - **Mean Squared Error (MSE)**: The average squared differences between predictions and actual values.  
 - **Root Mean Squared Error (RMSE)**: Similar to MSE but takes the square root, making it easier to interpret.  
-- **Validation Performance**: How well a model works on a separate dataset used for fine-tuning.  
-- **Model Performance**: The overall effectiveness of a model.  
-- **Multicollinearity**: When inputs are too similar, making it hard to tell their effects apart.  
-- **Scoring Argument**: A setting that defines how a model’s performance is measured, like accuracy or precision.  
 
-### **Machine Learning Concepts**  
-- **Training Data**: The dataset used to teach a model.  
-- **Test Data**: A separate dataset used to check a model’s performance.  
-- **Generalizes to Unseen Data**: The model can correctly predict outcomes for new data.  
-- **Regularization**: A technique to prevent overfitting by adding penalties for complexity.  
-- **Ridge**: A method that reduces large weights in regression models to prevent overfitting.  
-- **Lasso**: A method that removes less important inputs by setting some weights to zero.  
-- **Cost Function**: A formula that measures a model’s error, helping guide improvements.  
-- **Error Loss Function**: A function that calculates how far predictions are from actual results.  
-- **OLS (Ordinary Least Squares)**: A method in regression that finds the best-fitting line by minimizing squared errors.  
-- **Hyperparameter**: A setting chosen before training, like how fast a model learns.  
-- **Polynomial**: A transformation that allows models to capture more complex patterns.  
+---
+
+### **Machine Learning Workflow & Pipelines**  
+- **Optimization**: The process of fine-tuning a model’s settings to reduce errors and improve performance.  
 - **Pipeline**: An automated process that handles data preparation, training, and testing.  
 - **Data Leakage**: When information from the test data accidentally influences training, leading to misleading results.  
-- **Sparse Model**: A model that ignores many features by setting their weights to zero.  
-- **K-fold Cross Validation**: A method that splits data into multiple parts to test the model multiple times.  
-- **Cross Validation**: A way to evaluate a model by testing it on different subsets of data.  
 
-This should make the definitions easier to grasp! Let me know if you want any further simplifications or examples. 😊
-
+---
 
 ### Feature Selection
 **Feature selection** is the process by which you select a subset of features relevant for model construction. Feature selection comes with several benefits, the most obvious being the improvement in performance of a machine learning algorithm. Other benefits include:
