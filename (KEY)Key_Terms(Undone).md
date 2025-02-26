@@ -86,7 +86,9 @@
 ---
 
 ### **Machine Learning Workflow & Pipelines**  
-- **Optimization**: The process of fine-tuning a model’s settings to reduce errors and improve performance.  
+- **Optimization**: The process of fine-tuning a model’s settings to reduce errors and improve performance.
+- **Gradient Descent**: An optimization algorithm that minimizes a loss function.In linear regression, it minimizes MSE to find the best-fit line.
+In logistic regression, it minimizes log loss (cross-entropy loss) to improve probability predictions.
 - **Pipeline**: An automated process that handles data preparation, training, and testing.  
 - **Data Leakage**: When information from the test data accidentally influences training, leading to misleading results.  
 
@@ -138,6 +140,12 @@
 4. **Low Recall, Low Precision**  
    - The worst-case scenario: the model misses many true positives (low recall) and also makes many incorrect positive predictions (low precision).  
    - This suggests a poorly trained model, possibly due to poor feature selection, insufficient training data, or improper model tuning.
+---
+#### When we fit Linear regression
+- When we fit a line with Linear Regression, we optimise the **intercept** + **slope** x Weight
+- When we use Logistic Regression, we optimize a squiggle (S shaped curve)
+- When we use t-SNE, we optimize clusters
+
 
 ---
 
@@ -176,7 +184,8 @@
 
 18. **Threshold, there are far more probable but less equal**: Adjusting the decision threshold can change the balance between precision and recall, affecting the trade-off between false positives and false negatives.  
 
-19. **Metric**: Choosing the right metric (e.g., precision, recall, F1-score, AUC-ROC) depends on the problem context, especially when dealing with imbalanced classes or varying misclassification costs.  
+19. **Metric**: Choosing the right metric (e.g., precision, recall, F1-score, AUC-ROC) depends on the problem context, especially when dealing with imbalanced classes or varying misclassification costs.
+20. **When you use Gradient Descent**: if you use it to optimise a straight line, then we will have learned the strategy that optimizes a squiggle and clusters
 ---
 
 ### Speaking of Graphs
