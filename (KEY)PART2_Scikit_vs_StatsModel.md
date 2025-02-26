@@ -143,15 +143,13 @@ Embarked_S    -0.5005      0.329     -1.523      0.128      -1.144       0.143
 
 Generate the summary table for your model. Then, comment on the p-values associated with the various features you chose.
 
-
+Summary
 ```
-## Summary table
+- Highly significant variables: Pclass, Age, Sex_male (p-value < 0.05)
+- Not significant variables: Fare, Embarked_Q, and Embarked_S (p-value > 0.05)
+- Marginally significant: SibSp (p-value = 0.041)
 
-# Highly significant variables: Pclass, Age, Sex_male (p-value < 0.05)
-# Not significant variables: Fare, Embarked_Q, and Embarked_S (p-value > 0.05)
-# Marginally significant: SibSp (p-value = 0.041)
-
-## The model suggests that factors like class, age, and gender have a notable impact on survival, while others like fare and embarkation port do not contribute significantly.
+The model suggests that factors like class, age, and gender have a notable impact on survival, while others like fare and embarkation port do not contribute significantly.
 
 ```
 
@@ -351,7 +349,7 @@ Name: target, dtype: float64
 Describe how well you think this initial model is performing based on the training and test performance. Within your description, make note of how you evaluated performance as compared to your previous work with regression.
 
 ```
-Well based on the results, its pretty decent. Both 80-86% accurate```
+Well based on the results, its pretty decent. Both 80-86% accurate
 ```
 
 ## Summary
