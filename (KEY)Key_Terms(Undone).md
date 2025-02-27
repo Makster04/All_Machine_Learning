@@ -99,7 +99,7 @@ Here’s the categorized list with the definitions included:
 ### **Model Training & Evaluation**  
 
 - **Training & Validation:**  
-  - **Training:** The phase where a machine learns from data by adjusting its internal settings to minimize mistakes.  
+  - **Training:** The phase where a machine learns from data by adjusting its internal settings to minimize mistakes, seen data. 
   - **Testing:** Checking how well a trained model performs on new, unseen data.  
   - **Training Data:** The dataset used to teach a model.  
   - **Test Data:** A separate dataset used to check a model’s performance.  
