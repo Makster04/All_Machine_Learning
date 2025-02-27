@@ -14,7 +14,7 @@
 ---
 
 ### **Loss Functions & Optimization**  
-- - **Optimization**: The process of fine-tuning a model’s settings to reduce errors and improve performance.
+- **Optimization**: The process of fine-tuning a model’s settings to reduce errors and improve performance.
 - **Log-Loss Function**: A way to measure how well a classification model predicts probabilities. Lower values mean better accuracy.  
 - **Binary Cross-Entropy (BCE)**: A method for evaluating classification models by measuring how close predicted probabilities are to actual results.  
 - **Loss Function**: A formula that calculates how far predictions are from actual values, helping guide model improvement.  
