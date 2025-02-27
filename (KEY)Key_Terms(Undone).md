@@ -114,7 +114,7 @@ Here’s the categorized list with the definitions included:
   - **Validation Performance:** How well a model works on a separate dataset used for fine-tuning.  
   - **Model Performance:** The overall effectiveness of a model.  
   - **Generalizes to Unseen Data:** The model can correctly predict outcomes for new data.  
-  - **Overfitting:** Happens when a model remembers the training data too well but struggles to make correct predictions on new data.
+  - **Overfitting:** Happens when a model remembers the training data too well but struggles to make correct predictions on new data. Too high of variance.
   - **Underfitting:** When a model is too simple and fails to find patterns in the data.  
 
 - **Regularization & Hyperparameters:**  
