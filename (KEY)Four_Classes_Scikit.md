@@ -1,10 +1,26 @@
+Entropy.Gini Intrpurity and the Notion of Info Gain
+
+Entropy: a measure of class hetergeity within a partition.
+k - number of classes
+Pi- 
+Metric
+
+Feature
+Classification Problem
+Regression
+Function
+
 # OOP with Sckit-Learn Summary
 
 Scikit-learn provides a robust framework for machine learning in Python. The library is structured around four main classes that help streamline the workflow for building models. Below are explanations, definitions, examples, and Python code snippets related to each class:
-1. Estimator
-2. Transformer
-3. Prdictor
-4. Model
+1. **Estimator:** Any object that learns from data (e.g., regression, classification, clustering models).
+- **Example:** ```LinearRegression()```, ```RandomForestClassifier()```.
+2. **Transformer:** An estimator that modifies or preprocesses data.
+- **Example:** ```StandardScaler()``` for normalization, ```PCA()``` for dimensionality reduction.
+4. **Predictor:** Any estimator that makes predictions after training.
+- **Example:** ```LogisticRegression().predict(X_test).```
+5. **Model** trained predictor used for making predictions.
+- **Example:** A trained neural network, decision tree, or logistic regression model.
 
 #### Mutable vs Non-Mutable
 - **Mutable types:** Can be changed after creation. Examples include list, dict, set, numpy.ndarray, and pandas.DataFrame.
