@@ -7,19 +7,19 @@ Classification problems involve predicting categorical outcomes, where the goal 
 
 1. **Accuracy**:
    - The ratio of correctly predicted instances to the total instances in the dataset.
-   - Formula: \(\text{Accuracy} = \frac{\text{Correct Predictions}}{\text{Total Predictions}}\)
+   - Formula: $$\(\text{Accuracy} = \frac{\text{Correct Predictions}}{\text{Total Predictions}}\)$$
 
 2. **Precision**:
    - The proportion of positive predictions that are actually correct.
-   - Formula: \(\text{Precision} = \frac{\text{True Positives}}{\text{True Positives} + \text{False Positives}}\)
+   - Formula: $$\(\text{Precision} = \frac{\text{True Positives}}{\text{True Positives} + \text{False Positives}}\)$$
 
 3. **Recall (Sensitivity)**:
    - The proportion of actual positives that are correctly identified by the model.
-   - Formula: \(\text{Recall} = \frac{\text{True Positives}}{\text{True Positives} + \text{False Negatives}}\)
+   - Formula: $$\(\text{Recall} = \frac{\text{True Positives}}{\text{True Positives} + \text{False Negatives}}\)$$
 
 4. **F1-Score**:
    - The harmonic mean of Precision and Recall, used when there is an imbalance between classes.
-   - Formula: \(\text{F1-Score} = 2 \times \frac{\text{Precision} \times \text{Recall}}{\text{Precision} + \text{Recall}}\)
+   - Formula: $$\(\text{F1-Score} = 2 \times \frac{\text{Precision} \times \text{Recall}}{\text{Precision} + \text{Recall}}\)$$
 
 5. **Confusion Matrix**:
    - A matrix that summarizes the performance of the classification model, showing True Positives, False Positives, True Negatives, and False Negatives.
@@ -37,36 +37,36 @@ Regression problems involve predicting continuous outcomes, where the goal is to
 
 1. **Mean Absolute Error (MAE)**:
    - The average of the absolute differences between the predicted values and actual values.
-   - Formula: \(\text{MAE} = \frac{1}{n} \sum_{i=1}^{n} |y_i - \hat{y}_i|\)
+   - Formula: $$\(\text{MAE} = \frac{1}{n} \sum_{i=1}^{n} |y_i - \hat{y}_i|\)$$
 
 2. **Mean Squared Error (MSE)**:
    - The average of the squared differences between the predicted values and actual values.
-   - Formula: \(\text{MSE} = \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2\)
+   - Formula: $$\(\text{MSE} = \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2\)$$
 
 3. **Root Mean Squared Error (RMSE)**:
    - The square root of the MSE, which brings the error measure back to the original unit of the output variable.
-   - Formula: \(\text{RMSE} = \sqrt{\text{MSE}}\)
+   - Formula: $$\(\text{RMSE} = \sqrt{\text{MSE}}\)$$
 
 4. **R-squared (R²)**:
    - Represents the proportion of the variance in the dependent variable that is predictable from the independent variables.
-   - Formula: \(\text{R}^2 = 1 - \frac{\sum (y_i - \hat{y}_i)^2}{\sum (y_i - \bar{y})^2}\)
+   - Formula: $$\(\text{R}^2 = 1 - \frac{\sum (y_i - \hat{y}_i)^2}{\sum (y_i - \bar{y})^2}\)$$
    - R² ranges from 0 to 1, with 1 indicating perfect prediction.
 
 5. **Adjusted R-squared**:
    - A modified version of R² that adjusts for the number of predictors in the model. It is used to penalize models with too many predictors.
-   - Formula: \(\text{Adjusted R}^2 = 1 - \left( \frac{n-1}{n-p-1} \right) (1 - \text{R}^2)\)
-   - Where \(n\) is the number of data points and \(p\) is the number of predictors.
+   - Formula: $$\(\text{Adjusted R}^2 = 1 - \left( \frac{n-1}{n-p-1} \right) (1 - \text{R}^2)\)$$
+   - Where $$\(n\)$$ is the number of data points and \(p\) is the number of predictors.
 
 6. **Mean Absolute Percentage Error (MAPE)**:
    - Measures the accuracy of the model by calculating the percentage difference between the predicted and actual values.
-   - Formula: \(\text{MAPE} = \frac{1}{n} \sum_{i=1}^{n} \left| \frac{y_i - \hat{y}_i}{y_i} \right| \times 100\)
+   - Formula: $$\(\text{MAPE} = \frac{1}{n} \sum_{i=1}^{n} \left| \frac{y_i - \hat{y}_i}{y_i} \right| \times 100\)$$
 
 7. **Huber Loss**:
    - A combination of MSE and MAE that is less sensitive to outliers than MSE and more sensitive than MAE.
-   - Formula: \( \text{Huber}(y_i, \hat{y}_i) = \begin{cases} 
+   - Formula: $$\( \text{Huber}(y_i, \hat{y}_i) = \begin{cases} 
 \frac{1}{2}(y_i - \hat{y}_i)^2 & \text{for } |y_i - \hat{y}_i| \leq \delta \\
 \delta |y_i - \hat{y}_i| - \frac{1}{2} \delta^2 & \text{for } |y_i - \hat{y}_i| > \delta
-\end{cases} \)
+\end{cases} \)$$
 
 ### **Key Differences**:
 - **Classification** metrics focus on categorical outcomes (e.g., True/False), performance on the positive/negative class, and handling imbalances, whereas **regression** metrics focus on the magnitude of error in continuous outputs.
