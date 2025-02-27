@@ -1,7 +1,9 @@
 New notes being addded:
 Gini Impurity: Heavily penalizes heterrogenity (more strongly than entropy)
 
-
+- Decision Trees can over-split which could lead to over-fitting, too much purity.
+- 
+Choose a 
 - If I say "no", it splits one feature space into one class
 - Split the data features X and target Y
 - Big advantage of tree-ased, you dont have to scale and no need to transform
