@@ -55,7 +55,7 @@ Here’s a restructured and organized version of the information you've provided
 
 ---
 
-### Decision Trees: Overview and Key Concepts
+## Decision Trees: Overview and Key Concepts
 
 1. **Basic Concept of Decision Trees**
    - Decision Trees are a type of supervised machine learning algorithm used for classification and regression tasks. They work by recursively splitting the data into partitions (or "nodes") based on feature values.
@@ -100,7 +100,7 @@ Here’s a restructured and organized version of the information you've provided
 
 ---
 
-### Summary and Key Takeaways
+## Summary and Key Takeaways
 - **Gini Impurity**: Heavily penalizes heterogeneity, which helps in creating purer splits.
 - **Overfitting**: Decision Trees can overfit by making too many splits. Regularization techniques like limiting the max depth and using minimum sample splits help prevent this.
 - **Feature Importance**: Decision Trees automatically evaluate the importance of features during training.
