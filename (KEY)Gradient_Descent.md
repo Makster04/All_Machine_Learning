@@ -1,16 +1,3 @@
-How can you determine if the model is overfitting 
-
-- train model is seeing already seen data
-- test model is seeing already unseen data
-- Yes, YMean Squared Error (MSE) is a type of cost function used primarily in regression models.
-- Yes, Cross-Entropy Loss is a type of cost function used primarily in classification problems.
-
-
-- MSE, mainly used for regression model, is A cost function measures how far a model's predictions are from the actual value, Squaring the difference between predicted and actual values.
-
-- If Test and Train Model aint close to each other, means Train Model is overfitt.
-
-
 #### **Key Terms & Definitions**  
 
 1. **Cost Function (Loss Function)** – A mathematical function that measures the error between predicted values and actual values. Common examples include Mean Squared Error (MSE) for regression and Cross-Entropy Loss for classification.  
