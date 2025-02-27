@@ -1,3 +1,14 @@
+```
+How in a regression model can you tell and/or determine something is overfit?
+
+How in a Classifed problem can you and/or determine something is overfit?
+
+Regulaizer:
+Max depth: DecisionTreeClassifer(max_depth=_)- You will have to run multiple iteriations to fix an overfit and impure decision tree
+min sample split= Minimum number of samles allowed to split- Where I should stop on the minimizing to make sure it doesnt lead to the overfitting.
+How useful is each fature 
+```
+
 ## Is Mean Squared Error a TYPE of Cost Function?
 
 Yes, **Mean Squared Error (MSE)** is a type of **cost function** used primarily in **regression models**.  
