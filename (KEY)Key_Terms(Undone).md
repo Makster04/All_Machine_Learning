@@ -4,7 +4,7 @@
 - categorical features can be handleed easily
 - You can use this instread of finding weights
 - Decision Trees are blindandly fast
-- 
+  
 1. Split data features and target
 2. Make a decision (a split) based on some notion that given split aids in separating different classes in feature space.
 3. Continue on with each partition
@@ -46,7 +46,9 @@ Here’s the categorized list with the definitions included:
   - **Boundary:** A line or region that separates different categories in a classification model.  
   - **Decision Boundary:** The exact boundary a model creates to separate different classes in the data.  
   - **Binary Model:** A model that predicts only two possible outcomes, like "yes" or "no."  
-  - **Threshold:** The cutoff point where a model decides between classes based on probability, affecting errors like false positives and false negatives.  
+  - **Threshold:** The cutoff point where a model decides between classes based on probability, affecting errors like false positives and false negatives.
+  - **Decision Tree:** A flowchart-like model that splits data into branches based on feature conditions to make predictions or classifications.
+  - **Information Gain** (After Decision Tree): A measure used in decision trees to determine the effectiveness of a feature in splitting data. Higher values indicate better splits that reduce uncertainty.  
 
 - **Model Evaluation Metrics (For Classification):**  
   - **Log-Loss Function:** A way to measure how well a classification model predicts probabilities. Lower values mean better accuracy.  
