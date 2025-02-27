@@ -8,29 +8,64 @@ Classification problems involve predicting categorical outcomes, where the goal 
 1. **Accuracy**:
    - The ratio of correctly predicted instances to the total instances in the dataset.
    - Formula: $$\(\text{Accuracy} = \frac{\text{Correct Predictions}}{\text{Total Predictions}}\)$$
+```python
+from sklearn.metrics import accuracy_score
+accuracy = accuracy_score(y_true, y_pred)
+print(f'Accuracy: {accuracy}')
+```
 
 2. **Precision**:
    - The proportion of positive predictions that are actually correct.
    - Formula: $$\(\text{Precision} = \frac{\text{True Positives}}{\text{True Positives} + \text{False Positives}}\)$$
+```python
+from sklearn.metrics import precision_score
+precision = precision_score(y_true, y_pred, average='binary')  # For binary classification
+print(f'Precision: {precision}')
+```
 
 3. **Recall (Sensitivity)**:
    - The proportion of actual positives that are correctly identified by the model.
    - Formula: $$\(\text{Recall} = \frac{\text{True Positives}}{\text{True Positives} + \text{False Negatives}}\)$$
+```python
+from sklearn.metrics import recall_score
+recall = recall_score(y_true, y_pred, average='binary')  # For binary classification
+print(f'Recall: {recall}')
+```
 
 4. **F1-Score**:
    - The harmonic mean of Precision and Recall, used when there is an imbalance between classes.
    - Formula: $$\(\text{F1-Score} = 2 \times \frac{\text{Precision} \times \text{Recall}}{\text{Precision} + \text{Recall}}\)$$
+```python
+from sklearn.metrics import f1_score
+f1 = f1_score(y_true, y_pred, average='binary')  # For binary classification
+print(f'F1-Score: {f1}')
+```
 
 5. **Confusion Matrix**:
    - A matrix that summarizes the performance of the classification model, showing True Positives, False Positives, True Negatives, and False Negatives.
+```python
+from sklearn.metrics import confusion_matrix
+cm = confusion_matrix(y_true, y_pred)
+print(f'Confusion Matrix:\n{cm}')
+```
 
 6. **ROC-AUC (Receiver Operating Characteristic - Area Under Curve)**:
    - Measures the performance of a binary classification model by evaluating its ability to distinguish between classes.
    - The AUC value ranges from 0 to 1, where 1 indicates a perfect classifier.
+```python
+from sklearn.metrics import roc_auc_score
+auc = roc_auc_score(y_true, y_pred_prob)  # `y_pred_prob` should be predicted probabilities, not labels
+print(f'ROC-AUC: {auc}')
+```
 
 7. **Log Loss (Cross-Entropy Loss)**:
    - Measures the performance of a classification model by calculating the difference between the predicted probabilities and the actual outcomes.
    - Used for models that output probabilities (e.g., logistic regression).
+```python
+from sklearn.metrics import log_loss
+logloss = log_loss(y_true, y_pred_prob)  # `y_pred_prob` should be predicted probabilities, not labels
+print(f'Log Loss: {logloss}')
+```
 
 ### **Regression Metrics**  
 Regression problems involve predicting continuous outcomes, where the goal is to predict a real-valued output. Common evaluation metrics for regression include:
@@ -38,28 +73,60 @@ Regression problems involve predicting continuous outcomes, where the goal is to
 1. **Mean Absolute Error (MAE)**:
    - The average of the absolute differences between the predicted values and actual values.
    - Formula: $$\(\text{MAE} = \frac{1}{n} \sum_{i=1}^{n} |y_i - \hat{y}_i|\)$$
+```
+from sklearn.metrics import mean_absolute_error
+mae = mean_absolute_error(y_true, y_pred)
+print(f'MAE: {mae}')
+```
 
 2. **Mean Squared Error (MSE)**:
    - The average of the squared differences between the predicted values and actual values.
    - Formula: $$\(\text{MSE} = \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2\)$$
+```python
+from sklearn.metrics import mean_squared_error
+mse = mean_squared_error(y_true, y_pred)
+print(f'MSE: {mse}')
+```
 
 3. **Root Mean Squared Error (RMSE)**:
    - The square root of the MSE, which brings the error measure back to the original unit of the output variable.
    - Formula: $$\(\text{RMSE} = \sqrt{\text{MSE}}\)$$
+```python
+from sklearn.metrics import mean_squared_error
+rmse = mean_squared_error(y_true, y_pred, squared=False)  # `squared=False` gives RMSE
+print(f'RMSE: {rmse}')
+```
 
 4. **R-squared (R²)**:
    - Represents the proportion of the variance in the dependent variable that is predictable from the independent variables.
    - Formula: $$\(\text{R}^2 = 1 - \frac{\sum (y_i - \hat{y}_i)^2}{\sum (y_i - \bar{y})^2}\)$$
    - R² ranges from 0 to 1, with 1 indicating perfect prediction.
+```python
+from sklearn.metrics import r2_score
+r2 = r2_score(y_true, y_pred)
+print(f'R²: {r2}')
+```
 
 5. **Adjusted R-squared**:
    - A modified version of R² that adjusts for the number of predictors in the model. It is used to penalize models with too many predictors.
    - Formula: $$\(\text{Adjusted R}^2 = 1 - \left( \frac{n-1}{n-p-1} \right) (1 - \text{R}^2)\)$$
    - Where $$\(n\)$$ is the number of data points and \(p\) is the number of predictors.
+```python
+n = len(y_true)  # Number of data points
+p = len(X.columns)  # Number of predictors
+r2 = r2_score(y_true, y_pred)
+adjusted_r2 = 1 - (1 - r2) * (n - 1) / (n - p - 1)
+print(f'Adjusted R²: {adjusted_r2}')
+```
 
 6. **Mean Absolute Percentage Error (MAPE)**:
    - Measures the accuracy of the model by calculating the percentage difference between the predicted and actual values.
    - Formula: $$\(\text{MAPE} = \frac{1}{n} \sum_{i=1}^{n} \left| \frac{y_i - \hat{y}_i}{y_i} \right| \times 100\)$$
+```python
+import numpy as np
+mape = np.mean(np.abs((y_true - y_pred) / y_true)) * 100
+print(f'MAPE: {mape}')
+```
 
 7. **Huber Loss**:
    - A combination of MSE and MAE that is less sensitive to outliers than MSE and more sensitive than MAE.
@@ -108,3 +175,34 @@ Each of these metrics helps provide insights into different aspects of a model's
 - **Classification Problems**: Similarly, if a classification model shows high accuracy, precision, recall, or F1-score on the training set but these metrics drop substantially on the testing data (e.g., large gap in metrics), this is an indication of overfitting.
 
 These metrics help identify overfitting, where the model has learned the training data well but fails to generalize to unseen data.
+
+---
+
+## Example Use of doing all the metrics:
+```python
+from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, confusion_matrix, roc_auc_score, log_loss
+from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
+
+# Example for Classification Problem:
+y_true_class = [1, 0, 1, 1, 0, 1, 0]
+y_pred_class = [1, 0, 1, 0, 0, 1, 1]
+y_pred_prob_class = [0.9, 0.2, 0.95, 0.4, 0.1, 0.8, 0.7]  # Predicted probabilities for ROC-AUC & Log Loss
+
+print(f"Accuracy: {accuracy_score(y_true_class, y_pred_class)}")
+print(f"Precision: {precision_score(y_true_class, y_pred_class)}")
+print(f"Recall: {recall_score(y_true_class, y_pred_class)}")
+print(f"F1-Score: {f1_score(y_true_class, y_pred_class)}")
+print(f"Confusion Matrix:\n{confusion_matrix(y_true_class, y_pred_class)}")
+print(f"ROC-AUC: {roc_auc_score(y_true_class, y_pred_prob_class)}")
+print(f"Log Loss: {log_loss(y_true_class, y_pred_prob_class)}")
+
+# Example for Regression Problem:
+y_true_reg = [3.5, 2.8, 4.1, 5.0, 3.3]
+y_pred_reg = [3.6, 2.9, 3.9, 4.8, 3.5]
+
+print(f"MAE: {mean_absolute_error(y_true_reg, y_pred_reg)}")
+print(f"MSE: {mean_squared_error(y_true_reg, y_pred_reg)}")
+print(f"RMSE: {mean_squared_error(y_true_reg, y_pred_reg, squared=False)}")
+print(f"R²: {r2_score(y_true_reg, y_pred_reg)}")
+print(f"Adjusted R²: {1 - (1 - r2_score(y_true_reg, y_pred_reg)) * (len(y_true_reg) - 1) / (len(y_true_reg) - len(y_pred_reg) - 1)}")
+```
