@@ -2,6 +2,10 @@ New notes being addded:
 Gini Impurity: Heavily penalizes heterrogenity (more strongly than entropy)
 
 - Decision Trees can over-split which could lead to over-fitting, too much purity.
+- Regulaizer:
+- Max depth: DecisionTreeClassifer(max_depth=_)- You will have to run multiple iteriations to fix an overfit and impure decision tree
+- min sample split= Minimum number of samles allowed to split- Where I should stop on the minimizing to make sure it doesnt lead to the overfitting.
+- How useful is each fature 
 - 
 Choose a 
 - If I say "no", it splits one feature space into one class
