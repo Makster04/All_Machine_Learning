@@ -1,7 +1,7 @@
 
 ---
 
-## **Gini Impurity** in Decision Trees
+# **Gini Impurity** in Decision Trees
 
 **Gini Impurity** is a metric used to measure the "impurity" or "purity" of a node in a decision tree for classification tasks. It is used to determine how often a randomly chosen element from the dataset would be incorrectly classified if it was randomly labeled according to the distribution of labels in the node.
 
@@ -55,7 +55,7 @@ Here’s a restructured and organized version of the information you've provided
 
 ---
 
-## Decision Trees: Overview and Key Concepts
+# Decision Trees: Overview and Key Concepts
 
 1. **Basic Concept of Decision Trees**
    - Decision Trees are a type of supervised machine learning algorithm used for classification and regression tasks. They work by recursively splitting the data into partitions (or "nodes") based on feature values.
