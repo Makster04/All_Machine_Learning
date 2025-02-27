@@ -1,12 +1,26 @@
+- If I say "no", it splits one feature space into one class
+- Split the data features X and target Y
+- Big advantage of tree-ased, you dont have to scale and no need to transform
+- categorical features can be handleed easily
+- You can use this instread of finding weights
+- Decision Trees are blindandly fast
+- 
+1. Split data features and target
+2. Make a decision (a split) based on some notion that given split aids in separating different classes in feature space.
+3. Continue on with each partition
+
+
 ## Important terms & defintions in ML (Still more to be put)
 ---
 
 ### **Loss Functions & Optimization**  
+- - **Optimization**: The process of fine-tuning a model’s settings to reduce errors and improve performance.
 - **Log-Loss Function**: A way to measure how well a classification model predicts probabilities. Lower values mean better accuracy.  
 - **Binary Cross-Entropy (BCE)**: A method for evaluating classification models by measuring how close predicted probabilities are to actual results.  
 - **Loss Function**: A formula that calculates how far predictions are from actual values, helping guide model improvement.  
 - **Cost Function**: A formula that measures a model’s error, helping guide improvements.  
-- **Error Loss Function**: A function that calculates how far predictions are from actual results.  
+- **Error Loss Function**: A function that calculates how far predictions are from actual results.
+- **Recursive Proccess**: A recursive process is when a function calls itself repeatedly, breaking a problem into smaller parts until it reaches a simple stopping point (base case).
 
 ---
 
