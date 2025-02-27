@@ -1,3 +1,5 @@
+## Is Mean Squared Error a TYPE of Cost Function?
+
 Yes, **Mean Squared Error (MSE)** is a type of **cost function** used primarily in **regression models**.  
 
 ### **Why is MSE a Cost Function?**  
@@ -19,6 +21,9 @@ where:
 - Ensures the function is differentiable for **gradient descent** optimization.  
 
 Thus, MSE is commonly used as a **cost function** in regression tasks.
+
+---
+## Is Cross-Entropy a TYPE of Cost Function?
 
 Yes, **Cross-Entropy Loss** is a type of **cost function** used primarily in **classification problems**.  
 
