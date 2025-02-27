@@ -2,3 +2,7 @@ look at what class neigbors
 count class tallies all up
 assign datapoint  to winnig majority class
 Lower k implies higher sensitivity
+
+q = kfold(n_splits = 5).split(X_train)
+q
+
