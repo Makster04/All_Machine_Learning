@@ -206,3 +206,66 @@ print(f"RMSE: {mean_squared_error(y_true_reg, y_pred_reg, squared=False)}")
 print(f"R²: {r2_score(y_true_reg, y_pred_reg)}")
 print(f"Adjusted R²: {1 - (1 - r2_score(y_true_reg, y_pred_reg)) * (len(y_true_reg) - 1) / (len(y_true_reg) - len(y_pred_reg) - 1)}")
 ```
+---
+
+## Decision Tree falls under either:
+Yes, **decision trees** can be used for both **classification** and **regression** tasks, depending on the problem you're trying to solve.
+
+- **Classification Decision Tree**: If the decision tree is used for classifying data into categories (e.g., spam vs. non-spam), it is evaluated using **classification metrics** like **accuracy**, **precision**, **recall**, **F1-score**, and **confusion matrix**.
+
+- **Regression Decision Tree**: If the decision tree is used for predicting continuous values (e.g., predicting house prices), it is evaluated using **regression metrics** like **mean absolute error (MAE)**, **mean squared error (MSE)**, **root mean squared error (RMSE)**, and **R-squared (R²)**.
+
+### Python Implementation for Decision Tree:
+
+#### **For Classification (Decision Tree Classifier):**
+```python
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, confusion_matrix
+
+# Example data
+X_train_class = [[1, 2], [2, 3], [3, 4], [4, 5]]
+y_train_class = [0, 0, 1, 1]
+
+# Fit model
+clf = DecisionTreeClassifier()
+clf.fit(X_train_class, y_train_class)
+
+# Make predictions
+y_pred_class = clf.predict(X_train_class)
+
+# Evaluate
+print(f"Accuracy: {accuracy_score(y_train_class, y_pred_class)}")
+print(f"Precision: {precision_score(y_train_class, y_pred_class)}")
+print(f"Recall: {recall_score(y_train_class, y_pred_class)}")
+print(f"F1-Score: {f1_score(y_train_class, y_pred_class)}")
+print(f"Confusion Matrix:\n{confusion_matrix(y_train_class, y_pred_class)}")
+```
+
+#### **For Regression (Decision Tree Regressor):**
+```python
+from sklearn.tree import DecisionTreeRegressor
+from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
+
+# Example data
+X_train_reg = [[1, 2], [2, 3], [3, 4], [4, 5]]
+y_train_reg = [1.5, 2.5, 3.5, 4.5]
+
+# Fit model
+regressor = DecisionTreeRegressor()
+regressor.fit(X_train_reg, y_train_reg)
+
+# Make predictions
+y_pred_reg = regressor.predict(X_train_reg)
+
+# Evaluate
+print(f"MAE: {mean_absolute_error(y_train_reg, y_pred_reg)}")
+print(f"MSE: {mean_squared_error(y_train_reg, y_pred_reg)}")
+print(f"RMSE: {mean_squared_error(y_train_reg, y_pred_reg, squared=False)}")
+print(f"R²: {r2_score(y_train_reg, y_pred_reg)}")
+```
+
+### Summary of Decision Trees:
+- **Decision Tree Classifier** is for **classification tasks** and uses classification metrics (accuracy, precision, recall, etc.).
+- **Decision Tree Regressor** is for **regression tasks** and uses regression metrics (MAE, MSE, RMSE, etc.). 
+
+The implementation for both is very similar, with the primary difference being the use of `DecisionTreeClassifier` for classification tasks and `DecisionTreeRegressor` for regression tasks.
