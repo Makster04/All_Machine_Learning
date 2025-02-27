@@ -1,21 +1,3 @@
-New notes being addded:
-Gini Impurity: Heavily penalizes heterrogenity (more strongly than entropy)
-
-- Decision Trees can over-split which could lead to over-fitting, too much purity.
-- 
-Choose a 
-- If I say "no", it splits one feature space into one class
-- Split the data features X and target Y
-- Big advantage of tree-ased, you dont have to scale and no need to transform
-- categorical features can be handleed easily
-- You can use this instread of finding weights
-- Decision Trees are blindandly fast
-  
-1. Split data features and target
-2. Make a decision (a split) based on some notion that given split aids in separating different classes in feature space.
-3. Continue on with each partition
-
-
 ## Important terms & defintions in ML (Still more to be put)
 ---
 
@@ -57,9 +39,14 @@ Here’s the categorized list with the definitions included:
   - **Information Gain** (After Decision Tree): A measure used in decision trees to determine the effectiveness of a feature in splitting data. Higher values indicate better splits that reduce uncertainty.  
 
 - **Model Evaluation Metrics (For Classification):**  
-  - **Log-Loss Function:** A way to measure how well a classification model predicts probabilities. Lower values mean better accuracy.  
-  - **Binary Cross-Entropy (BCE):** A method for evaluating classification models by measuring how close predicted probabilities are to actual results.  
-
+    - **Accuracy:** The percentage of correct predictions out of all predictions made.
+    - **Precision:** The percentage of true positives out of all positive predictions made.
+    - **Recall (Sensitivity):** The percentage of true positives out of all actual positives.
+    - **F1-Score:** The average of precision and recall, balancing both.
+    - **AUC-ROC:** Measures the model’s ability to tell apart classes, with higher values being better.
+    - **Confusion Matrix:** A table that shows how well a classification model performed, with counts of true positives, false positives, true negatives, and false negatives.
+    - **Specificity (True Negative Rate):** The percentage of true negatives out of all actual negatives.
+    - **Log-Loss (Cross-Entropy Loss):** A measure of how well the model's probability predictions match the actual outcomes, with penalties for more confident incorrect predictions.
 ---
 
 ### **Regression & Statistical Modeling**  
@@ -81,12 +68,15 @@ Here’s the categorized list with the definitions included:
   - **Polynomial:** A transformation that allows models to capture more complex patterns.  
   - **Sparse Model:** A model that ignores many features by setting their weights to zero.  
 
-- **Model Evaluation Metrics (For Regression):**  
-  - **R-Squared:** Measures how well a model explains the variation in data.  
-  - **Adjusted R-Squared:** A version of R-Squared that accounts for the number of inputs.  
-  - **Mean Absolute Error (MAE):** The average difference between predictions and actual values.  
-  - **Mean Squared Error (MSE):** The average squared differences between predictions and actual values.  
-  - **Root Mean Squared Error (RMSE):** Similar to MSE but takes the square root, making it easier to interpret.  
+- **Model Evaluation Metrics (For Regression):**
+    - **Mean Squared Error (MSE):** Measures the average of squared differences between predicted and actual values. Larger errors are penalized more. Lower values are better.
+    - **Mean Absolute Error (MAE):** The average of absolute differences between predicted and actual values. It’s less affected by large errors than MSE.
+    - **Root Mean Squared Error (RMSE):** The square root of MSE, showing the error in the same units as the data.
+    - **R-Squared (R²):** Shows how well the model explains the data. Values close to 1 are good, values close to 0 mean it’s not explaining much.
+    - **Adjusted R-Squared:** Similar to R-squared, but adjusts for the number of predictors in the model, helping to avoid overfitting.
+    - **Mean Absolute Percentage Error (MAPE):** Measures the average percentage error between predicted and actual values. It’s useful when the scale of the data matters.
+    - **Explained Variance Score:** Shows how much of the data's variation is explained by the model.
+
 
 ---
 
