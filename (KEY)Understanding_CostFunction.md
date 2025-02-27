@@ -25,7 +25,7 @@ Thus, MSE is commonly used as a **cost function** in regression tasks.
 ---
 ## Is Cross-Entropy a TYPE of Cost Function?
 
-Yes, **Cross-Entropy Loss** is a type of **cost function** used primarily in **classification problems**.  
+Yes, **Cross-Entropy Loss** is a type of **cost function** used primarily in **classification problems** (Cofusion Matricies, Decision Trees).  
 
 ### **Why is Cross-Entropy a Cost Function?**  
 A **cost function** measures how well a model's predicted probabilities match the actual labels. **Cross-Entropy Loss** does this by:  
