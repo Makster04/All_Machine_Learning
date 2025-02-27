@@ -1,3 +1,25 @@
+Yes, **Mean Squared Error (MSE)** is a type of **cost function** used primarily in **regression models**.  
+
+### **Why is MSE a Cost Function?**  
+A **cost function** measures how far a model's predictions are from the actual values. MSE calculates this by:  
+1. Squaring the difference between predicted and actual values.  
+2. Averaging these squared differences over all data points.  
+
+### **MSE Formula:**  
+$$\[
+MSE = \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2
+\]$$
+where:  
+- $$\( y_i \)$$ = actual value  
+- $$\( \hat{y}_i \)$$ = predicted value  
+- $$\( n \)$$ = total number of observations  
+
+### **Why Squaring?**  
+- Punishes **larger errors** more than smaller ones.  
+- Ensures the function is differentiable for **gradient descent** optimization.  
+
+Thus, MSE is commonly used as a **cost function** in regression tasks.
+
 Yes, **Cross-Entropy Loss** is a type of **cost function** used primarily in **classification problems**.  
 
 ### **Why is Cross-Entropy a Cost Function?**  
@@ -21,7 +43,7 @@ $$\[
 where:  
 - $$\( k \)$$ = number of classes  
 - $$\( y_{ij} \)$$ = actual class (one-hot encoded)  
-- $$\( \hat{y}_{ij} \)$$ = predicted probability for class \( j \)  
+- $$\( \hat{y}_{ij} \)$$ = predicted probability for class $$\( j \)$$
 
 ### **Why Use Cross-Entropy?**  
 - Works well with **softmax** for multi-class classification.  
