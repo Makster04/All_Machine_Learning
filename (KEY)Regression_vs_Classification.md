@@ -1,4 +1,4 @@
-## Evaluation Metrics used for Regression Models vs Classification Problems
+# Evaluation Metrics used for Regression Models vs Classification Problems
 ### 1. **Algorithms (Regression vs Classification)**  
 Here’s the revised table with regression algorithms listed first:  
 
