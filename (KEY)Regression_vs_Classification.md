@@ -37,39 +37,39 @@ Here’s the revised table with regression algorithms listed first:
 
 ### 3. **How to Determine if an Algorithm is Overfitting**  
 #### **For Regression Models:**
-- **Low training error, but high test error** (High variance)
-- **R² is very high (close to 1) on training but much lower on test**
-- **MSE or RMSE is significantly lower on training than test**
-- **Overly complex model (high-degree polynomial regression)**
+- - **Low training error, but high test error** (High variance)
+- - **R² is very high (close to 1) on training but much lower on test**
+- - **MSE or RMSE is significantly lower on training than test**
+- - **Overly complex model (high-degree polynomial regression)**
 
 ### **How to Determine if an Algorithm is Overfitting**  
 
 #### **For Regression Models:**  
-- **Low training error, but high test error** (**High variance**)  
+- - **Low training error, but high test error** (**High variance**)  
   *(Example: Training MSE = 2.3, Test MSE = 15.7)*  
-- **R² is very high (close to 1) on training but much lower on test**  
+- - **R² is very high (close to 1) on training but much lower on test**  
   *(Example: Training R² = 0.98, Test R² = 0.45)*  
-- **MSE or RMSE is significantly lower on training than test**  
+- - **MSE or RMSE is significantly lower on training than test**  
   *(Example: Training RMSE = 1.5, Test RMSE = 7.8)*  
-- **Overly complex model (high-degree polynomial regression)**  
+- - **Overly complex model (high-degree polynomial regression)**  
   *(Example: A 10th-degree polynomial fits every training point perfectly but performs poorly on new data.)*  
 
 #### **For Classification Models:**  
-- **Training accuracy is much higher than test accuracy**  
+- - **Training accuracy is much higher than test accuracy**  
   *(Example: Training Accuracy = 98%, Test Accuracy = 65%)*  
-- **High precision but very low recall (or vice versa)**  
+- - **High precision but very low recall (or vice versa)**  
   *(Example: Precision = 95%, Recall = 40%, indicating the model is too strict and missing positive cases)*  
-- **Perfect separation of training data (likely memorized)**  
+- - **Perfect separation of training data (likely memorized)**  
   *(Example: Decision tree with depth = 20 perfectly classifies all training points but fails on unseen data.)*  
-- **ROC-AUC close to 1 on training but significantly lower on test**  
+- - **ROC-AUC close to 1 on training but significantly lower on test**  
   *(Example: Training AUC = 0.99, Test AUC = 0.60, meaning the model struggles with generalization.)*  
 
 #### **General Indicators for Both:**  
-- **Adding more training data does not improve performance**  
+- - **Adding more training data does not improve performance**  
   *(Example: Even after adding 10,000 more samples, test accuracy remains at 65% while training is still 98%.)*  
-- **Removing features does not significantly affect accuracy**  
+- - **Removing features does not significantly affect accuracy**  
   *(Example: Dropping 5 features changes Training Accuracy from 97% to 96%, indicating redundancy.)*  
-- **Cross-validation shows large differences between training and validation scores**  
+- - **Cross-validation shows large differences between training and validation scores**  
   *(Example: 5-fold CV results: Training Accuracy = 96%, Validation Accuracy = 70%.)*  
 
 ---
