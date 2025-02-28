@@ -1,4 +1,6 @@
-
+#### Important Repos
+https://github.com/learn-co-curriculum/dsc-introduction-to-decision-trees
+https://github.com/learn-co-curriculum/dsc-tuning-decision-trees
 ---
 
 # **Gini Impurity** in Decision Trees
