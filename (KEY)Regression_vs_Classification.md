@@ -40,19 +40,37 @@
 - **MSE or RMSE is significantly lower on training than test**
 - **Overly complex model (high-degree polynomial regression)**
 
-#### **For Classification Models:**
-- **Training accuracy is much higher than test accuracy**
-- **High precision but very low recall (or vice versa)**
-- **Perfect separation of training data (likely memorized)**
-- **ROC-AUC close to 1 on training but significantly lower on test**
+### **How to Determine if an Algorithm is Overfitting**  
 
-#### **General Indicators for Both:**
-- **Adding more training data does not improve performance**
-- **Removing features does not significantly affect accuracy**
-- **Cross-validation shows large differences between training and validation scores**
+#### **For Regression Models:**  
+- **Low training error, but high test error** (**High variance**)  
+  *(Example: Training MSE = 2.3, Test MSE = 15.7)*  
+- **R² is very high (close to 1) on training but much lower on test**  
+  *(Example: Training R² = 0.98, Test R² = 0.45)*  
+- **MSE or RMSE is significantly lower on training than test**  
+  *(Example: Training RMSE = 1.5, Test RMSE = 7.8)*  
+- **Overly complex model (high-degree polynomial regression)**  
+  *(Example: A 10th-degree polynomial fits every training point perfectly but performs poorly on new data.)*  
 
-Would you like any specific examples or visualizations to explain this better?
-In machine learning, classification and regression are two different types of problems, and the evaluation metrics for each type of problem are designed to assess model performance in different ways. Here's a comparison of the evaluation metrics used for classification problems versus those used for regression models:
+#### **For Classification Models:**  
+- **Training accuracy is much higher than test accuracy**  
+  *(Example: Training Accuracy = 98%, Test Accuracy = 65%)*  
+- **High precision but very low recall (or vice versa)**  
+  *(Example: Precision = 95%, Recall = 40%, indicating the model is too strict and missing positive cases)*  
+- **Perfect separation of training data (likely memorized)**  
+  *(Example: Decision tree with depth = 20 perfectly classifies all training points but fails on unseen data.)*  
+- **ROC-AUC close to 1 on training but significantly lower on test**  
+  *(Example: Training AUC = 0.99, Test AUC = 0.60, meaning the model struggles with generalization.)*  
+
+#### **General Indicators for Both:**  
+- **Adding more training data does not improve performance**  
+  *(Example: Even after adding 10,000 more samples, test accuracy remains at 65% while training is still 98%.)*  
+- **Removing features does not significantly affect accuracy**  
+  *(Example: Dropping 5 features changes Training Accuracy from 97% to 96%, indicating redundancy.)*  
+- **Cross-validation shows large differences between training and validation scores**  
+  *(Example: 5-fold CV results: Training Accuracy = 96%, Validation Accuracy = 70%.)*  
+
+---
 
 ### **Classification Metrics**  
 Classification problems involve predicting categorical outcomes, where the goal is to assign an input to one of several classes. Common evaluation metrics for classification include:
