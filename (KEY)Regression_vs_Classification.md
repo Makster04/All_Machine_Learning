@@ -2,36 +2,36 @@
 ### 1. **Algorithms (Regression vs Classification)**  
 Here’s the revised table with regression algorithms listed first:  
 
-| Algorithm                          | Regression | Classification |
-|-------------------------------------|------------|---------------|
-| Linear Regression                  | ✅          | ❌             |
-| Ridge & Lasso Regression           | ✅          | ❌             |
-| Polynomial Regression              | ✅          | ❌             |
-| Decision Tree                      | ✅          | ✅             |
-| Random Forest                      | ✅          | ✅             |
-| Support Vector Machine (SVM)       | ✅          | ✅             |
-| K-Nearest Neighbors (KNN)          | ✅          | ✅             |
-| Neural Networks                    | ✅          | ✅             |
-| Gradient Boosting (XGBoost, LightGBM) | ✅       | ✅             |
-| Logistic Regression                | ❌          | ✅             |
-| Naïve Bayes                        | ❌          | ✅             |  
+| Algorithm                          | Regression | Classification | When to Use it |
+|-------------------------------------|------------|---------------|----|
+| Linear Regression                  | ✅          | ❌             | When you need to predict a continuous value and assume a linear relationship between features and target. |
+| Ridge & Lasso Regression           | ✅          | ❌             | When you need a regression model that prevents overfitting, especially when dealing with highly correlated features. |
+| Polynomial Regression              | ✅          | ❌             | When the relationship between features and target is nonlinear, but can still be modeled with polynomial terms. |
+| Decision Tree                      | ✅          | ✅             | When interpretability is important and you need a model that works well for both regression and classification. |
+| Random Forest                      | ✅          | ✅             | When you need a more stable and robust version of decision trees that reduces overfitting. |
+| Support Vector Machine (SVM)       | ✅          | ✅             | When you need a powerful model for classification (with kernel tricks) or regression that can handle high-dimensional data.|
+| K-Nearest Neighbors (KNN)          | ✅          | ✅             | When you have small datasets and want a simple, instance-based learner that doesn't assume an underlying function.|
+| Neural Networks                    | ✅          | ✅             | When working with complex patterns, large datasets, or deep learning applications.|
+| Gradient Boosting (XGBoost, LightGBM) | ✅       | ✅             | When high accuracy is needed and you have enough data to support an ensemble learning approach.|
+| Logistic Regression                | ❌          | ✅             | When solving a binary classification problem and interpretability is important.|
+| Naïve Bayes                        | ❌          | ✅             | When working with text classification (e.g., spam filtering) or other problems where conditional independence assumptions hold. |
 
 ---
 
 ### 2. **Metrics Used for Regression vs Classification**  
-| Metric | Regression | Classification |
-|--------|-----------|---------------|
-| **Mean Squared Error (MSE)** | ✅ | ❌ |
-| **Root Mean Squared Error (RMSE)** | ✅ | ❌ |
-| **Mean Absolute Error (MAE)** | ✅ | ❌ |
-| **R-Squared (R²)** | ✅ | ❌ |
-| **Adjusted R-Squared** | ✅ | ❌ |
-| **Accuracy** | ❌ | ✅ |
-| **Precision** | ❌ | ✅ |
-| **Recall (Sensitivity)** | ❌ | ✅ |
-| **F1-Score** | ❌ | ✅ |
-| **ROC-AUC Score** | ❌ | ✅ |
-| **Log-Loss** | ❌ | ✅ |
+| Metric | Regression | Classification | When to Use It |
+|--------|-----------|---------------|----|
+| **Mean Squared Error (MSE)** | ✅ | ❌ | When measuring error for regression models; penalizes larger errors more than smaller ones. |
+| **Root Mean Squared Error (RMSE)** | ✅ | ❌ | Similar to MSE but keeps the unit of measurement the same as the target variable, making it more interpretable. |
+| **Mean Absolute Error (MAE)** | ✅ | ❌ | When measuring absolute differences in regression without squaring errors (less sensitive to outliers). |
+| **R-Squared (R²)** | ✅ | ❌ | When evaluating how well regression models explain the variance in the target variable. |
+| **Adjusted R-Squared** | ✅ | ❌ | When comparing regression models with different numbers of predictors, accounting for model complexity.|
+| **Accuracy** | ❌ | ✅ |  When class distribution is balanced in classification problems, but can be misleading for imbalanced datasets. |
+| **Precision** | ❌ | ✅ | When false positives are more costly than false negatives (e.g., spam detection, fraud detection). |
+| **Recall (Sensitivity)** | ❌ | ✅ | When missing positive cases is more costly than false positives (e.g., medical diagnoses). |
+| **F1-Score** | ❌ | ✅ | When you need a balance between precision and recall, especially for imbalanced datasets. |
+| **ROC-AUC Score** | ❌ | ✅ | When you need to measure how well a classifier differentiates between classes across different thresholds. |
+| **Log-Loss** | ❌ | ✅ | When evaluating probabilistic classification models, penalizing incorrect high-confidence predictions. |
 
 ---
 
@@ -74,6 +74,132 @@ Here’s the revised table with regression algorithms listed first:
 
 ---
 ## Algorithm Syntax
+---
+Here are coding examples for each of these algorithms using `scikit-learn` in Python:  
+
+---
+
+### **1. Linear Regression**  
+```python
+from sklearn.linear_model import LinearRegression
+from sklearn.model_selection import train_test_split
+from sklearn.datasets import make_regression
+
+# Generate dataset
+X, y = make_regression(n_samples=100, n_features=1, noise=10, random_state=42)
+
+# Train-test split
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+# Initialize and train model
+model = LinearRegression()
+model.fit(X_train, y_train)
+
+# Predict
+y_pred = model.predict(X_test)
+print("Linear Regression Coefficients:", model.coef_)
+```
+
+---
+
+### **2. Ridge & Lasso Regression**  
+```python
+from sklearn.linear_model import Ridge, Lasso
+
+# Ridge Regression
+ridge = Ridge(alpha=1.0)
+ridge.fit(X_train, y_train)
+print("Ridge Regression Coefficients:", ridge.coef_)
+
+# Lasso Regression
+lasso = Lasso(alpha=0.1)
+lasso.fit(X_train, y_train)
+print("Lasso Regression Coefficients:", lasso.coef_)
+```
+
+---
+
+### **3. Polynomial Regression**  
+```python
+from sklearn.preprocessing import PolynomialFeatures
+from sklearn.pipeline import make_pipeline
+
+# Create polynomial features
+poly_model = make_pipeline(PolynomialFeatures(degree=3), LinearRegression())
+poly_model.fit(X_train, y_train)
+
+# Predict
+y_poly_pred = poly_model.predict(X_test)
+print("Polynomial Regression Coefficients:", poly_model.named_steps['linearregression'].coef_)
+```
+
+---
+
+### **4. Decision Tree**  
+```python
+from sklearn.tree import DecisionTreeRegressor
+
+# Initialize and train model
+tree_model = DecisionTreeRegressor(max_depth=4, random_state=42)
+tree_model.fit(X_train, y_train)
+
+# Predict
+y_tree_pred = tree_model.predict(X_test)
+print("Decision Tree Predictions:", y_tree_pred[:5])
+```
+
+---
+
+### **5. Random Forest**  
+```python
+from sklearn.ensemble import RandomForestRegressor
+
+# Initialize and train model
+rf_model = RandomForestRegressor(n_estimators=100, max_depth=4, random_state=42)
+rf_model.fit(X_train, y_train)
+
+# Predict
+y_rf_pred = rf_model.predict(X_test)
+print("Random Forest Predictions:", y_rf_pred[:5])
+```
+
+---
+
+### **6. K-Nearest Neighbors (KNN)**
+```python
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.datasets import make_classification
+
+# Generate dataset
+X, y = make_classification(n_samples=100, n_features=5, random_state=42)
+
+# Train-test split
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+# Initialize and train model
+knn_model = KNeighborsClassifier(n_neighbors=3)
+knn_model.fit(X_train, y_train)
+
+# Predict
+y_knn_pred = knn_model.predict(X_test)
+print("KNN Predictions:", y_knn_pred[:5])
+```
+
+---
+
+### **7. Logistic Regression**  
+```python
+from sklearn.linear_model import LogisticRegression
+
+# Initialize and train model
+logistic_model = LogisticRegression()
+logistic_model.fit(X_train, y_train)
+
+# Predict
+y_logistic_pred = logistic_model.predict(X_test)
+print("Logistic Regression Predictions:", y_logistic_pred[:5])
+```
+---
 ## Metrics Explained
 ---
 
