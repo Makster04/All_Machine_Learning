@@ -73,9 +73,8 @@ Here’s the revised table with regression algorithms listed first:
   *(Example: 5-fold CV results: Training Accuracy = 96%, Validation Accuracy = 70%.)*  
 
 ---
-
-Here’s your request formatted in the same style:
-
+## Algorithm Syntax
+## Metrics Explained
 ---
 
 ### **Regression Metrics**  
