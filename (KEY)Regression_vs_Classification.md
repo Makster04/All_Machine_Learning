@@ -146,7 +146,7 @@ Classification problems involve predicting categorical outcomes, where the goal 
 
 2. **Precision**  
    - Measures how many predicted positives are actually correct.  
-   - Formula: $$\(\text{Precision} = \frac{\text{TP}}{\text{TP} + \text{FP}}\)$$  
+   - Formula: $$\(\text{Precision} = \frac{\text{True Positive}}{\text{True Positive} + \text{False Positive}}\)$$  
    ```python
    from sklearn.metrics import precision_score
    precision = precision_score(y_true, y_pred, average='binary')
@@ -155,7 +155,7 @@ Classification problems involve predicting categorical outcomes, where the goal 
 
 3. **Recall (Sensitivity)**  
    - Measures how many actual positives were correctly predicted.  
-   - Formula: $$\(\text{Recall} = \frac{\text{TP}}{\text{TP} + \text{FN}}\)$$  
+   - Formula: $$\(\text{Recall} = \frac{\text{True Positive}}{\text{True Positive} + \text{False Negative}}\)$$  
    ```python
    from sklearn.metrics import recall_score
    recall = recall_score(y_true, y_pred, average='binary')
