@@ -1,5 +1,57 @@
 ## Evaluation Metrics used for Regression Models vs Classification Problems
+### 1. **Algorithms (Regression vs Classification)**  
+| Algorithm | Used For |
+|-----------|----------|
+| Linear Regression | Regression |
+| Logistic Regression | Classification |
+| Decision Tree | Both |
+| Random Forest | Both |
+| Support Vector Machine (SVM) | Both (with different kernels) |
+| K-Nearest Neighbors (KNN) | Both |
+| Naïve Bayes | Classification |
+| Neural Networks | Both |
+| Gradient Boosting (XGBoost, LightGBM) | Both |
+| Ridge & Lasso Regression | Regression |
+| Polynomial Regression | Regression |
 
+---
+
+### 2. **Metrics Used for Regression vs Classification**  
+| Metric | Regression | Classification |
+|--------|-----------|---------------|
+| **Mean Squared Error (MSE)** | ✅ | ❌ |
+| **Root Mean Squared Error (RMSE)** | ✅ | ❌ |
+| **Mean Absolute Error (MAE)** | ✅ | ❌ |
+| **R-Squared (R²)** | ✅ | ❌ |
+| **Adjusted R-Squared** | ✅ | ❌ |
+| **Accuracy** | ❌ | ✅ |
+| **Precision** | ❌ | ✅ |
+| **Recall (Sensitivity)** | ❌ | ✅ |
+| **F1-Score** | ❌ | ✅ |
+| **ROC-AUC Score** | ❌ | ✅ |
+| **Log-Loss** | ❌ | ✅ |
+
+---
+
+### 3. **How to Determine if an Algorithm is Overfitting**  
+#### **For Regression Models:**
+- **Low training error, but high test error** (High variance)
+- **R² is very high (close to 1) on training but much lower on test**
+- **MSE or RMSE is significantly lower on training than test**
+- **Overly complex model (high-degree polynomial regression)**
+
+#### **For Classification Models:**
+- **Training accuracy is much higher than test accuracy**
+- **High precision but very low recall (or vice versa)**
+- **Perfect separation of training data (likely memorized)**
+- **ROC-AUC close to 1 on training but significantly lower on test**
+
+#### **General Indicators for Both:**
+- **Adding more training data does not improve performance**
+- **Removing features does not significantly affect accuracy**
+- **Cross-validation shows large differences between training and validation scores**
+
+Would you like any specific examples or visualizations to explain this better?
 In machine learning, classification and regression are two different types of problems, and the evaluation metrics for each type of problem are designed to assess model performance in different ways. Here's a comparison of the evaluation metrics used for classification problems versus those used for regression models:
 
 ### **Classification Metrics**  
@@ -157,18 +209,6 @@ Each of these metrics helps provide insights into different aspects of a model's
 | **Mean Absolute Percentage Error (MAPE)** | Low on training data, high on testing/validation data (e.g., Training MAPE = 5%, Testing MAPE = 25%) | A low MAPE on training data with a high MAPE on testing/validation indicates that the model is not able to generalize well to unseen data.                                |
 | **Huber Loss**              | Low on training data, high on testing/validation data (e.g., Training Huber Loss = 0.1, Testing Huber Loss = 1.2) | Similar to MSE, but more robust to outliers; a significant difference between training and testing performance suggests overfitting.                                       |
 
-### **Overfitting Indicators for Classification Problems**
-
-| **Metric/Function**        | **Result of Overfitting**                              | **Explanation**                                                                                                                                                            |
-|----------------------------|--------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Accuracy**               | High on training data, low on testing/validation data (e.g., Training Accuracy = 98%, Testing Accuracy = 75%) | Overfitting is indicated when accuracy is significantly higher on training data than on testing/validation data, showing the model memorizes the training set.             |
-| **Precision**              | High on training data, low on testing/validation data (e.g., Training Precision = 0.95, Testing Precision = 0.70) | If precision is high on training but much lower on testing/validation, the model may be overfitting by favoring memorized instances rather than generalizing.               |
-| **Recall**                 | High on training data, low on testing/validation data (e.g., Training Recall = 0.93, Testing Recall = 0.60) | A large drop in recall between training and testing data suggests overfitting, as the model memorizes specific cases but fails to generalize.                              |
-| **F1-Score**               | High on training data, low on testing/validation data (e.g., Training F1-Score = 0.94, Testing F1-Score = 0.68) | If the F1-score is much higher on training data than on testing data, this points to overfitting, where precision and recall are high on training but suffer on new data.    |
-| **Confusion Matrix**       | High number of True Positives on training, low on testing (e.g., Training True Positives = 950, Testing True Positives = 600) | A confusion matrix showing a high number of True Positives on training data but a significant drop on testing data can indicate overfitting.                             |
-| **ROC-AUC**                | High on training data, low on testing/validation data (e.g., Training AUC = 0.98, Testing AUC = 0.75) | Overfitting may manifest as a high AUC on training data but a low AUC on testing data, suggesting the model is over-optimizing on the training set.                      |
-| **Log Loss (Cross-Entropy Loss)** | Low on training data, high on testing/validation data (e.g., Training Log Loss = 0.1, Testing Log Loss = 1.5) | A significant increase in log loss from training to testing data suggests that the model is overfitting, producing incorrect probabilistic predictions on unseen data.      |
-| **Confusion Matrix (for Imbalanced Classes)** | Very low false negatives/positives on training, high on testing (e.g., Training False Positives = 10, Testing False Positives = 50) | In an imbalanced classification problem, overfitting could be indicated by a low number of false negatives and false positives on training data, but much higher on testing data. |
 
 ### **Key Observations:**
 - **Regression Models**: If a regression model shows a significant difference between the performance on the training data and the testing data (e.g., much lower error on the training set), this suggests overfitting.
