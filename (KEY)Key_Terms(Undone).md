@@ -5,9 +5,12 @@ Here’s the categorized list with the definitions included:
 
 ---
 
+
 ### **Feature Engineering & Data Processing**  
 
-- **Feature Scaling & Encoding:**  
+- **Feature Scaling & Encoding:**
+  - **Supervised Learning**: Training models using labeled, Data with known output values used for guiding model training, data to predict outcomes or classifications. 
+  - **Unsupervised Learning**: Training models using unlabeled, Data with unknown outputs, data to predict outcomes or classifications. 
   - **Standardized:** Adjusting data so it has a mean of zero and a standard deviation of one.  
   - **StandardScaler:** A tool that adjusts data so different features are on the same scale.  
   - **MinMaxScaler:** A method that scales data between 0 and 1.  
