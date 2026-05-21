@@ -1,5 +1,6 @@
-# Where Regression Fits in Data Science
+# Regression in Data Science
 
+## Where It Fits
 ```
 Data Science
 │
