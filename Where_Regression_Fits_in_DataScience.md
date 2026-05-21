@@ -1,5 +1,5 @@
 # SUPERVISED LEARNING
-# Regression in Data Science
+# DS -> ML -> SL -> Regression in Data Science
 
 ## Where It Fits
 ```
@@ -126,7 +126,7 @@ The key takeaway: MAE and RMSE tell you *how far off* your predictions are in do
 
 
 
-# Classification in Data Science
+# DS -> ML -> SL -> Classification in Data Science
 
 ## Where It Fits
 
@@ -437,4 +437,287 @@ Lower Log-Loss = better calibrated probability predictions
 - Use **F1-Score** when you need to balance both.
 - Use **AUC-ROC** when comparing models.
 - Use **Log-Loss** when the probability score itself matters, not just the final label.
+
+# DS -> ML -> UNSUPERVISED LEARNING
+# Unsupervised Learning in Data Science
+
+## Where It Fits
+
+```
+Data Science
+│
+└── Machine Learning
+    │
+    ├── Supervised Learning
+    │   ├── Regression
+    │   │   ├── Linear Regression
+    │   │   ├── Polynomial Regression
+    │   │   └── Ridge / Lasso
+    │   │
+    │   └── Classification
+    │       ├── Logistic Regression
+    │       └── Decision Trees
+    │
+    └── Unsupervised Learning        ← YOU ARE HERE
+        ├── Clustering (k-means)     ← and these two
+        └── Dimensionality Reduction (t-SNE)  ← and these two
+```
+
+---
+
+## The Key Difference from Supervised Learning
+
+This is the most important thing to understand before going any further:
+
+| | Supervised Learning | Unsupervised Learning |
+|---|---|---|
+| Has labels? | **Yes** — data has known answers | **No** — data has no answers |
+| Goal | Predict a known outcome | Discover hidden structure |
+| Example task | "Is this email spam?" | "What kinds of customers do we have?" |
+| Model learns from | Correct answers during training | Patterns and relationships in the data |
+
+In supervised learning, the model is told what the right answer is and learns to replicate it. In unsupervised learning, **there is no right answer** — the model finds structure in the data on its own.
+
+---
+
+## The Dataset
+
+Throughout this guide, we use a **customer shopping behavior** dataset. There are no labels — we don't know in advance what groups exist. That's exactly the point.
+
+| Customer | Annual Spend ($) | Visit Frequency (per month) | Avg. Items per Visit |
+|----------|------------------|-----------------------------|----------------------|
+| A        | 12,000           | 20                          | 15                   |
+| B        | 1,500            | 3                           | 4                    |
+| C        | 11,500           | 18                          | 14                   |
+| D        | 1,200            | 2                           | 3                    |
+| E        | 6,000            | 10                          | 8                    |
+| F        | 6,500            | 11                          | 9                    |
+| G        | 13,000           | 22                          | 16                   |
+| H        | 1,800            | 4                           | 5                    |
+
+The goal: **find natural groupings of customers** without being told what those groups are.
+
+---
+
+## Stage 1 — Data Preprocessing
+> Steps taken *before* fitting the model.
+
+Preprocessing is even more critical in unsupervised learning because the model has no labels to guide it — the raw data structure is everything.
+
+### Feature Scaling
+Look at the three columns:
+- `Annual Spend` ranges from $1,200 to $13,000
+- `Visit Frequency` ranges from 2 to 22
+- `Avg. Items per Visit` ranges from 3 to 16
+
+If we leave these as-is, `Annual Spend` will completely dominate the model just because its numbers are bigger — not because it's more important. A difference of $1,000 in spend would outweigh a difference of 10 visits even if the visits matter more.
+
+We fix this with **StandardScaler** — transforming every column to have a mean of 0 and a standard deviation of 1:
+
+| Customer | Annual Spend (scaled) | Visit Frequency (scaled) | Avg. Items (scaled) |
+|----------|-----------------------|--------------------------|---------------------|
+| A        | +1.2                  | +1.3                     | +1.2                |
+| B        | −1.1                  | −1.0                     | −1.1                |
+| C        | +1.1                  | +1.1                     | +1.1                |
+| D        | −1.2                  | −1.2                     | −1.2                |
+| E        | +0.0                  | +0.0                     | +0.0                |
+| F        | +0.1                  | +0.1                     | +0.1                |
+| G        | +1.3                  | +1.4                     | +1.3                |
+| H        | −1.0                  | −0.9                     | −0.9                |
+
+Now every feature contributes equally. You can already see three rough groups emerging just from the signs: high positives (A, C, G), near-zero (E, F), and negatives (B, D, H).
+
+---
+
+## Stage 2 — Model Fitting
+> How each unsupervised model finds structure in the data.
+
+There are two models on the tree: **K-Means Clustering** and **t-SNE**. They have different goals — clustering *assigns* customers to groups, while t-SNE *visualizes* the structure of the data.
+
+---
+
+### Model A — K-Means Clustering
+
+K-Means finds natural groupings by assigning every data point to the nearest **centroid** (center point of a cluster). You tell it how many clusters (k) to find — it figures out where those clusters are.
+
+#### How It Works — Step by Step
+
+**Step 1 — Pick k starting centroids randomly.**
+Let's say k = 3. The model randomly places 3 centroids anywhere in the data.
+
+**Step 2 — Assign every customer to their nearest centroid.**
+
+```
+Cluster 1 (High spenders):    A, C, G
+Cluster 2 (Mid spenders):     E, F
+Cluster 3 (Low spenders):     B, D, H
+```
+
+**Step 3 — Recalculate each centroid** as the average of all points assigned to it.
+
+```
+New Centroid 1 = average of A, C, G → ($12,167, 20 visits, 15 items)
+New Centroid 2 = average of E, F    → ($6,250, 10.5 visits, 8.5 items)
+New Centroid 3 = average of B, D, H → ($1,500, 3 visits, 4 items)
+```
+
+**Step 4 — Reassign every customer to their new nearest centroid.**
+
+**Step 5 — Repeat Steps 3 and 4** until the centroids stop moving. This is the **optimization** — K-Means is minimizing the total distance between every point and its centroid.
+
+#### The Final Clusters
+
+| Cluster | Customers | Profile |
+|---------|-----------|---------|
+| 1 | A, C, G | High spenders — frequent, large baskets |
+| 2 | E, F    | Mid spenders — moderate frequency |
+| 3 | B, D, H | Low spenders — rare, small baskets |
+
+> Notice: we didn't tell the model what these groups meant. It just found them. **We** are the ones who look at the results and give them names like "High spenders."
+
+---
+
+### Choosing K — The Elbow Method
+
+How do you know if k = 3 was the right choice? You use the **Elbow Method** — run K-Means for different values of k and measure the **inertia** (total distance of all points from their centroids) each time.
+
+| k | Inertia | Change |
+|---|---------|--------|
+| 1 | 980     | —      |
+| 2 | 420     | −560   |
+| 3 | 180     | −240   |
+| 4 | 160     | −20    |
+| 5 | 155     | −5     |
+
+Plot this and look for the "elbow" — the point where adding more clusters stops making a meaningful difference. Here that's at **k = 3**: going from 2→3 clusters drops inertia by 240, but going from 3→4 only drops it by 20. The improvement isn't worth the added complexity.
+
+---
+
+### Model B — t-SNE (Dimensionality Reduction)
+
+Our dataset has 3 features (dimensions). Real datasets often have 50, 100, or even thousands. **t-SNE** compresses that high-dimensional data down to 2 dimensions so you can **plot and visualize** the structure.
+
+It's not a clustering algorithm — it's a **visualization tool**. But it works hand-in-hand with clustering because it lets you *see* whether the clusters K-Means found actually make sense.
+
+#### How It Works — The Intuition
+
+t-SNE preserves the *neighborhood* of each data point — customers that were similar in the original high-dimensional space should appear close together in the 2D plot, and customers that were different should appear far apart.
+
+**Before t-SNE** — 3 columns, hard to visualize:
+
+```
+Customer A: [12000, 20, 15]
+Customer B: [1500, 3, 4]
+Customer E: [6000, 10, 8]
+```
+
+**After t-SNE** — compressed to 2 dimensions:
+
+```
+Customer A: [8.2, 7.1]    → plots in top-right
+Customer B: [−7.5, −6.8]  → plots in bottom-left
+Customer E: [0.3, −0.2]   → plots in the middle
+```
+
+When you color each point by its K-Means cluster assignment, you can visually confirm the clusters are well-separated — or spot problems if they're overlapping.
+
+#### What t-SNE Is Optimizing
+
+Unlike K-Means (which minimizes distance to centroids), t-SNE optimizes **clusters** — it arranges points in 2D space so that similar points are close and dissimilar points are far. This is why the course notes say:
+> "When we use t-SNE, we optimize clusters."
+
+> ⚠️ Important: t-SNE is for **visualization only**. The 2D coordinates it produces are not meaningful numbers — you can't use them as features for another model.
+
+---
+
+## Stage 3 — Model Evaluation
+> How do you measure success when there are no right answers?
+
+This is the hardest part of unsupervised learning. In supervised learning, you compare predictions to known labels. Here **there are no labels** — so we have to measure how good the clusters are by their own internal structure.
+
+### Inertia (Within-Cluster Sum of Squares)
+Measures how tightly packed each cluster is — the total distance between every point and its cluster's centroid.
+
+```
+Lower inertia = tighter, more compact clusters = better
+```
+
+From our Elbow Method table, k = 3 gave inertia = 180. This dropped significantly from k = 2 (420) but barely changed at k = 4 (160), confirming 3 is the right choice.
+
+---
+
+### Silhouette Score
+A more complete metric that measures two things at once:
+1. How close each point is to its **own cluster** (tight = good)
+2. How far each point is from **other clusters** (separated = good)
+
+```
+Silhouette Score ranges from −1 to +1:
+
+  +1.0 → perfectly clustered, well separated
+   0.0 → point is on the border between two clusters
+  −1.0 → point was probably assigned to the wrong cluster
+```
+
+**Example scores for our customers:**
+
+| Customer | Cluster | Silhouette Score | Interpretation |
+|----------|---------|------------------|----------------|
+| A        | 1       | +0.87            | Very confidently in Cluster 1 |
+| E        | 2       | +0.61            | Reasonably well placed in Cluster 2 |
+| F        | 2       | +0.58            | Similar to E |
+| B        | 3       | +0.82            | Very confidently in Cluster 3 |
+
+**Overall Silhouette Score** = average across all customers ≈ **+0.72** → strong clustering.
+
+---
+
+### The Human Interpretation Step
+Because there are no labels, the final evaluation step is always human. After the model finds clusters, **you** look at the centroid profiles and decide if they make business sense.
+
+| Cluster | Avg. Annual Spend | Avg. Visits/Month | Label We Give It |
+|---------|-------------------|-------------------|------------------|
+| 1       | $12,167           | 20                | VIP Customers    |
+| 2       | $6,250            | 10.5              | Regular Customers|
+| 3       | $1,500            | 3                 | Occasional Buyers|
+
+> The model found the groups. You give them meaning. This is what makes unsupervised learning both powerful and interpretive — the algorithm can't tell you *what* the clusters are, only *that* they exist.
+
+---
+
+## Summary
+
+### K-Means vs. t-SNE
+
+| | K-Means Clustering | t-SNE |
+|---|---|---|
+| Goal | Assign data points to groups | Visualize high-dimensional data in 2D |
+| Output | A cluster label for each point | 2D coordinates for plotting |
+| What it optimizes | Inertia (distance to centroids) | Cluster separation in 2D space |
+| Can use output as features? | Yes (cluster labels) | No (2D coords are not meaningful) |
+| Best for | Segmentation, grouping | Exploration, visualization |
+
+### Evaluation Metrics at a Glance
+
+| Metric | What It Tells You | Ideal Value |
+|--------|-------------------|-------------|
+| Inertia | How tight the clusters are internally | As low as possible |
+| Silhouette Score | How well-separated and compact clusters are | Close to +1.0 |
+| Elbow Method | Whether you chose the right number of clusters (k) | Look for the "elbow" |
+| Human Interpretation | Whether the clusters make real-world sense | Subjective — depends on domain |
+
+### Supervised vs. Unsupervised — The Full Picture
+
+| | Supervised | Unsupervised |
+|---|---|---|
+| Has labels | Yes | No |
+| Predicts | A known outcome | Hidden structure |
+| Evaluation | Compare to ground truth (accuracy, RMSE) | Internal structure (silhouette, inertia) |
+| Models covered | Linear Regression, Logistic Regression, Decision Trees | K-Means, t-SNE |
+| Example use case | Predict house price, detect spam | Segment customers, explore data |
+
+**The bottom line:**
+- **K-Means** finds natural groupings in your data — you tell it how many clusters, it figures out what they are.
+- **t-SNE** lets you *see* your high-dimensional data in 2D — useful for exploring structure and validating clusters visually.
+- Because there are no right answers, evaluation relies on **internal metrics** like inertia and silhouette score, plus **your own judgment** about whether the clusters make sense.
 
